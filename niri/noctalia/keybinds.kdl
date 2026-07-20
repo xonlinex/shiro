@@ -1,47 +1,47 @@
 binds {
     Mod+D hotkey-overlay-title="Toggle dock" {
-        spawn-sh "qs -c noctalia-shell ipc call dock toggle";
+        spawn-sh "noctalia msg dock-toggle";
     }
     Mod+B hotkey-overlay-title="Toggle bar" {
-        spawn-sh "qs -c noctalia-shell ipc call bar toggle";
+        spawn-sh "noctalia msg bar-toggle";
     }
     Mod+Shift+Q hotkey-overlay-title="Powermenu" {
-        spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle";
+        spawn-sh "noctalia msg panel-toggle session";
     }
     Mod+Shift+I hotkey-overlay-title="Settings" {
-        spawn-sh "qs -c noctalia-shell ipc call settings toggle";
+        spawn-sh "noctalia msg settings-toggle";
     }
     Mod+Shift+W hotkey-overlay-title="Browser Wallpaper" {
-        spawn-sh "qs -c noctalia-shell ipc call wallpaper toggle";
+        spawn-sh "noctalia msg panel-toggle wallpaper";
     }
-    Mod+Alt+L hotkey-overlay-title="Lock screen" {
-        spawn-sh "qs -c noctalia-shell ipc call lockScreen lock";
-    }
+    // Mod+Alt+L hotkey-overlay-title="Lock screen" {
+    //     spawn-sh "qs -c noctalia-shell ipc call lockScreen lock";
+    // }
     Ctrl+Shift+Escape hotkey-overlay-title="System Monitor" {
-        spawn-sh "qs -c noctalia-shell ipc call systemMonitor toggle";
+        spawn-sh "noctalia msg panel-open control-center system";
     }
-    XF86MonBrightnessUp allow-when-locked=true {
-        spawn-sh "qs -c noctalia-shell ipc call brightness increase";
-    }
-    XF86MonBrightnessDown allow-when-locked=true {
-        spawn-sh "qs -c noctalia-shell ipc call brightness decrease";
-    }
+    // XF86MonBrightnessUp allow-when-locked=true {
+    //     spawn-sh "qs -c noctalia-shell ipc call brightness increase";
+    // }
+    // XF86MonBrightnessDown allow-when-locked=true {
+    //     spawn-sh "qs -c noctalia-shell ipc call brightness decrease";
+    // }
     F12 allow-when-locked=true {
-        spawn-sh "qs -c noctalia-shell ipc call volume increase";
+        spawn-sh "noctalia msg volume-up";
     }
     F11 allow-when-locked=true {
-        spawn-sh "qs -c noctalia-shell ipc call volume decrease";
+        spawn-sh "noctalia msg volume-down";
     }
     F10 allow-when-locked=true {
-        spawn-sh "qs -c noctalia-shell ipc call volume muteOutput";
+        spawn-sh "noctalia msg volume-mute";
     }
     F9 allow-when-locked=true {
-        spawn-sh "qs -c noctalia-shell ipc call media next";
+        spawn-sh "noctalia msg media next";
     }
     F8 allow-when-locked=true {
-        spawn-sh "qs -c noctalia-shell ipc call media playPause";
+        spawn-sh "noctalia msg media toggle";
     }
     F7 allow-when-locked=true {
-        spawn-sh "qs -c noctalia-shell ipc call media previous";
+        spawn-sh "noctalia msg media previous";
     }
 }

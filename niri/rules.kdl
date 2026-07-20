@@ -13,7 +13,7 @@ layer-rule {
 }
 window-rule {
     match app-id="com.github.neithern.g4music|org.gnome.Nautilus"
-    opacity 0.95
+    opacity 1.0
     /- popups { // bug in blur popups
         background-effect {
             xray false
@@ -30,7 +30,7 @@ window-rule {
 }
 
 window-rule {
-    geometry-corner-radius 16
+    geometry-corner-radius 20
     clip-to-geometry true
     tiled-state true
     draw-border-with-background false

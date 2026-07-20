@@ -18,7 +18,7 @@ blur {
 }
 
 layout {
-    gaps 5
+    gaps 20
     center-focused-column "on-overflow"
     always-center-single-column
     default-column-width { proportion 0.5; }
@@ -35,7 +35,7 @@ layout {
     }
     border {
         on
-        width 1
+        width 2
         active-color "#F7DCDE39"
         inactive-color "#A58A8D30"
     }
@@ -83,7 +83,7 @@ recent-windows {
 }
 
 cursor {
-    xcursor-theme "Bibata-Original-Classic"
+    xcursor-theme "Bibata-Modern-Classic"
     xcursor-size 24
     hide-when-typing
     hide-after-inactive-ms 5000
