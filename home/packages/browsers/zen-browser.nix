@@ -15,10 +15,12 @@
       ];
 
       settings = {
+        "intl.accept_languages" = "en-US,en,es-ES,es";
         "zen.view.experimental-no-window-controls" = true;
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         "zen.widget.linux.transparency" = false;
         "signon.rememberSignons" = false;
+        "browser.ctrlTab.sortByRecentlyUsed" = true;
       };
     };
   };
