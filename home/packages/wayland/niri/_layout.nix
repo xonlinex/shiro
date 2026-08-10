@@ -38,7 +38,7 @@
 
     shadow = {
       on = {};
-      softness = 30;
+      softness = 20;
       spread = 0;
       draw-behind-window = true;
       color = "#00000070";

@@ -21,6 +21,8 @@
           font_weight = 400;
           background_opacity = 0.85;
           capsule = true;
+          capsule_fill = "primary";
+          capsule_opacity = 0.15;
           capsule_padding = 10.0;
           capsule_radius = 20;
           capsule_thickness = 0.8;
@@ -50,9 +52,9 @@
             {
               id = "g1";
               enabled = true;
-              fill = "surface_variant";
+              fill = "primary";
               members = [ "cpu" "ram" "sysmon" ];
-              opacity = 1.0;
+              opacity = 0.15;
               padding = 10.0;
               radius = 20.0;
             }
@@ -122,7 +124,7 @@
       };
 
       theme = {
-        mode = "dark";
+        mode = "auto";
         source = "wallpaper";
         wallpaper_scheme = "m3-tonal-spot";
         templates = {
@@ -189,7 +191,7 @@
         };
         workspaces = {
           active_pill_size = 2.0;
-          empty_color = "outline";
+          empty_color = "secondary";
         };
       };
     };
