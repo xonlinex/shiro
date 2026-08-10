@@ -94,11 +94,6 @@
   programs.fish.enable = true;
   programs.dconf.enable = true;
 
-  # services.xserver.enable = true;
-
-
-  # List services that you want to enable:
-
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
@@ -114,16 +109,19 @@
 
   services.power-profiles-daemon.enable = true;
 
+  # services.xserver.enable = true;
+
   services.displayManager.sddm = {
 	  enable = true;
     wayland.enable = true;
-    # settings = {
-    #   Theme = {
-    #     CursorTheme = "Bibata-Modern-Classic";
-    #     CursorSize = "24";
-    #   };
-    # };
   };
+
+  # theme sddm
+  programs.qylock = {
+    enable = true;
+    theme = "nier-automata";
+  };
+
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

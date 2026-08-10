@@ -23,10 +23,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    qylock.url = "github:Darkkal44/qylock";
     import-tree.url = "github:vic/import-tree";
   };
 
-    outputs = { nixpkgs, home-manager, noctalia,zen-browser, firefox-addons, ... }@inputs:
+    outputs = { nixpkgs, home-manager, noctalia,zen-browser, firefox-addons, qylock, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -36,6 +37,7 @@
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       inherit system;
       modules = [
+        qylock.nixosModules.default
         ./hosts/nixos/configuration.nix
       ];
     };
