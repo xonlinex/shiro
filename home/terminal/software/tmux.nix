@@ -72,17 +72,6 @@
       bind -r l resize-pane -R 5
       bind -r k resize-pane -U 5
 
-      # Floating window
-      bind-key -n M-f run-shell ' \
-        CURRENT="#{session_name}"; \
-        if [ "$''${CURRENT#float-}" != "$CURRENT" ]; then \
-            tmux detach-client; \
-        else \
-            tmux display-popup -d "#{pane_current_path}" -w 80% -h 80% \
-                -E "tmux new-session -A -s float-$CURRENT"; \
-        fi \
-        '
-
       ### PANE ###
       set -g pane-border-style fg=black
       set -g pane-border-lines single
