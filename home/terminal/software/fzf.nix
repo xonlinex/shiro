@@ -6,34 +6,24 @@
     enableFishIntegration = true;
     # Deshabilita el atajo Ctrl+R de fzf para evitar el conflicto con Atuin
     historyWidget.command = "";
-    
-    defaultOptions = [
-      "--height=40%"
-      "--layout=reverse"
-      "--border"
-      "--info=inline"
-      "--prompt='❯ '"
-      "--pointer='▶'"
-      "--marker='✓'"
-      "--separator='─'"
-      "--scrollbar='│'"
-      "--color=bg:-1"
-      "--color=bg+:#3e3c38"
-      "--color=border:#5c5855"
-      "--color=fg:#d8d0c0"
-      "--color=fg+:#d8d0c0"
-      "--color=gutter:#1c1b19"
-      "--color=header:#7890a0"
-      "--color=hl:#c8b468"
-      "--color=hl+:#e08060"
-      "--color=info:#5c5855"
-      "--color=marker:#8a9868"
-      "--color=pointer:#e08060"
-      "--color=prompt:#b07878"
-      "--color=query:#d8d0c0"
-      "--color=scrollbar:#5c5855"
-      "--color=separator:#5c5855"
-      "--color=spinner:#80a090"
-    ];
+
+    colors = {
+      "bg+" = "#201b19";
+      bg = "#171311";
+      border = "#362f2c";
+      fg = "#a09384";
+      "fg+" = "#e6d5c2";
+      gutter = "#171311";
+      header = "#4e89a2";
+      hl = "#ea9875";
+      "hl+" = "#fcba81";
+      info = "#73665b";
+      marker = "#43b16a";
+      pointer = "#ea9875";
+      prompt = "#d1766e";
+      query = "#e6d5c2";
+      scrollbar = "#362f2c";
+      spinner = "#ea9875";
+    };
   };
 }

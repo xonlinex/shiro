@@ -23,7 +23,6 @@
     python3
     maven
     cargo
-    opencode
     #x11
     xwayland-satellite
   ];

@@ -6,45 +6,25 @@
 
     settings = {
       gui = {
+        nerdFontsVersion = "3";
+
         theme = {
-          activeBorderColor = [
-            "green"
-            "bold"
-          ];
-          inactiveBorderColor = [
-            "#5c5855"
-          ];
-          searchingActiveBorderColor = [
-            "yellow"
-            "bold"
-          ];
-          optionsTextColor = [
-            "cyan"
-          ];
-          selectedLineBgColor = [
-            "#3d3b39"
-          ];
-          inactiveViewSelectedLineBgColor = [
-            "#433f3d"
-          ];
-          cherryPickedCommitFgColor = [
-            "cyan"
-          ];
-          cherryPickedCommitBgColor = [
-            "magenta"
-          ];
-          markedBaseCommitFgColor = [
-            "cyan"
-          ];
-          markedBaseCommitBgColor = [
-            "yellow"
-          ];
-          unstagedChangesColor = [
-            "red"
-          ];
-          defaultFgColor = [
-            "default"
-          ];
+          activeBorderColor = [ "#ea9875" "bold" ];
+          inactiveBorderColor = [ "#73665b" ];
+          searchingActiveBorderColor = [ "#fcba81" "bold" ];
+          optionsTextColor = [ "#ea9875" ];
+
+          selectedLineBgColor = [ "#2a2422" ];
+          inactiveViewSelectedLineBgColor = [ "#201b19" ];
+
+          cherryPickedCommitFgColor = [ "#171311" ];
+          cherryPickedCommitBgColor = [ "#ea9875" ];
+
+          markedBaseCommitFgColor = [ "#171311" ];
+          markedBaseCommitBgColor = [ "#fcba81" ];
+
+          unstagedChangesColor = [ "#d25780" ];
+          defaultFgColor = [ "#e6d5c2" ];
         };
       };
     };
