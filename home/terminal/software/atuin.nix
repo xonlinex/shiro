@@ -4,14 +4,27 @@
   programs.atuin = {
     enable = true;
     enableFishIntegration = true;
-    flags = [ "--disable-up-arrow" ]; # Opcional: mantiene la flecha arriba nativa de fish/vi si lo prefieres
-    # Configuración avanzada de Atuin (equivalente al archivo config.toml)
+    flags = [ "--disable-up-arrow" ];
+
+    themes = {
+      cendre = {
+        theme.name = "cendre";
+        colors = {
+          AlertInfo = "#43b16a";
+          AlertWarn = "#fcba81";
+          AlertError = "#d25780";
+          Annotation = "#8bcfff";
+          Base = "#e6d5c2";
+          Guidance = "#a09384";
+          Important = "#ea9875";
+          Title = "#9480ba";
+        };
+      };
+    };
+
     settings = {
       style = "full";
-      
-      # Puedes agregar más configuraciones aquí si lo necesitas en el futuro, por ejemplo:
-      # search_mode = "fuzzy";
-      # inline_height = 20;
+      theme.name = "cendre";
     };
   };
 }

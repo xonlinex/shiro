@@ -11,6 +11,7 @@
       lt = "eza --icons --group-directories-first -T";
       tree = "eza --icons -T";
       cat = "bat";
+      z = "zoxide";
       ff = "fastfetch";
     };
 
