@@ -28,7 +28,6 @@
       default-column-width.fixed = 1200;
     }
 
-    # Regla 4: Estilo visual global (esquinas, blur, clip)
     {
       geometry-corner-radius = 16;
       clip-to-geometry = true;
@@ -42,7 +41,6 @@
   ];
 
   layer-rule = [
-    # Regla de capa para Vicinae
     {
       match._props = { namespace = "vicinae"; };
       background-effect = {

@@ -16,6 +16,8 @@
     duff
     imagemagick
     openssh
+    unzip
+    duf
   ];
 
   imports = [

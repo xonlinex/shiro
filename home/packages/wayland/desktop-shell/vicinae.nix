@@ -10,7 +10,7 @@
 
       theme = {
         dark = {
-          name = "noctalia";  # ajustar según lo que veas en ls
+          name = "noctalia";
             icon_theme = "auto";
         };
         light = {
@@ -26,8 +26,8 @@
       };
 
       launcher_window = {
-        rounding = 16;
-        opacity = 0.80;
+        rounding = 10;
+        opacity = 0.85;
       };
     };
   };

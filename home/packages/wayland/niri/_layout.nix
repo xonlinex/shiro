@@ -33,14 +33,14 @@
       on = {};
       width = 1;
       active-color = "#F7DCDE39";
-      inactive-color = "#A58A8D30";
+      inactive-color = "#A58A8D39";
     };
 
     shadow = {
-      on = {};
+      off = {};
       softness = 20;
-      spread = 0;
-      draw-behind-window = true;
+      spread = 3;
+      draw-behind-window = false;
       color = "#00000070";
       inactive-color = "#00000035";
     };

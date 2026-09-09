@@ -68,7 +68,7 @@
   users.users."xonlinex" = {
     isNormalUser = true;
     description = "xOnlinEx";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker"];
     packages = with pkgs; [];
     shell = pkgs.fish;
   };
@@ -93,6 +93,7 @@
   programs.niri.enable = true;
   programs.fish.enable = true;
   programs.dconf.enable = true;
+  virtualisation.docker.enable = true;
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
@@ -119,7 +120,13 @@
   # theme sddm
   programs.qylock = {
     enable = true;
-    theme = "nier-automata";
+    theme = "clockwork/orbital";
+    themeOptions = {
+      clockwork.orbital = {
+        themeMode = "dark";
+        enableWindup = false;
+      };
+    };
   };
 
 

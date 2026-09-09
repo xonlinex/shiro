@@ -17,10 +17,11 @@
       # Window
       window-padding-x = "15";
       window-padding-y = "15";
-      background-opacity = "0.90";
+      background-opacity = "0.85";
 
       # UI
-      theme = "dark:ember,light:ember-light";
+      # theme = "dark:ember,light:ember-light";
+      theme = "cendre";
       window-theme = "system";
       window-decoration = "false";
       scrollbar = "system";
@@ -28,6 +29,7 @@
       confirm-close-surface = "false";
 
       # Notifications
+      desktop-notifications = "true";
       notify-on-command-finish = "unfocused";
       notify-on-command-finish-action = "bell,notify";
       notify-on-command-finish-after = "30s";

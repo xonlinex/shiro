@@ -4,6 +4,8 @@
   home.packages = with pkgs; [
     gapless
     wl-clipboard
+    cliphist
+    wl-clip-persist
     libnotify
     vesktop
     loupe
@@ -16,6 +18,12 @@
     fastfetch
     ghostty
     git
+    nodejs
+    openjdk21
+    python3
+    maven
+    cargo
+    opencode
     #x11
     xwayland-satellite
   ];

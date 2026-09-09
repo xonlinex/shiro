@@ -14,6 +14,10 @@
         darkreader
       ];
 
+      # mods = [
+      #   "c6813222-6571-4ba6-8faf-58f3343324f6"
+      # ];
+
       settings = {
         "intl.accept_languages" = "en-US,en,es-ES,es";
         "zen.view.experimental-no-window-controls" = true;

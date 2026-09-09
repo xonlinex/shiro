@@ -22,28 +22,28 @@
           background_opacity = 0.85;
           capsule = true;
           capsule_fill = "primary";
-          capsule_opacity = 0.15;
+          capsule_opacity = 0.1;
           capsule_padding = 10.0;
-          capsule_radius = 20;
+          capsule_radius = 16;
           capsule_thickness = 0.8;
           thickness = 40;
-          padding = 10;
-          position = "top";
-          radius = 20;
+          margin_edge = 0;
           margin_ends = 0;
+          padding = 15;
+          position = "top";
+          radius = 16;
+          shadow = false;
           widget_spacing = 5;
 
-          start = [ "launcher" "workspaces" "taskbar" "active_window" ];
+          start = [ "launcher" "workspaces" "active_window" ];
           center = [ "media" ];
           end = [
             "tray"
             "keyboard_layout"
             "privacy"
-            "sysmon"
             "group:g1"
-            "clock"
-            "weather"
             "volume"
+            "clock"
             "notifications"
             "control-center"
           ];
@@ -54,9 +54,9 @@
               enabled = true;
               fill = "primary";
               members = [ "cpu" "ram" "sysmon" ];
-              opacity = 0.15;
-              padding = 10.0;
-              radius = 20.0;
+              opacity = 0.1;
+              padding = 12.0;
+              radius = 16.0;
             }
           ];
         };
@@ -73,20 +73,12 @@
         ];
       };
 
+      desktop_widgets = {
+        enabled = false;
+      };
+
       dock = {
-        enabled = true;
-        background_opacity = 0.7;
-        cross_axis_padding = 10;
-        icon_size = 40;
-        inactive_opacity = 1.0;
-        inactive_scale = 1.0;
-        item_spacing = 5;
-        magnification = true;
-        main_axis_padding = 10;
-        margin_edge = 10;
-        pinned = [ "zen-beta" "com.mitchellh.ghostty" "org.gnome.Nautilus" "mpv" "com.github.neithern.g4music" "org.gnome.Loupe" "org.gnome.Papers" "vesktop" "DBeaver" "Postman" "nvim.desktop"];
-        radius = 16;
-        show_dots = true;
+        enabled = false;
       };
 
       hooks = {
@@ -101,22 +93,36 @@
         enabled = true;
       };
 
-      osd = {
-        background_opacity = 0.8;
-        offset_x = 0;
-        offset_y = 15;
+      notification = {
+        background_opacity = 0.85;
+        max_visible = 3;
+        offset_y = 20;
       };
 
-      plugins = {
-        enabled = [ ];
+      osd = {
+        background_opacity = 0.85;
+        offset_x = 0;
+        offset_y = 20;
+        position = "bottom_center";
       };
 
       shell = {
-        avatar_path = "/home/xonlinex/Pictures/elaine-dev.png";
+        app_icon_color = "secondary";
+        avatar_path = "/home/xonlinex/Pictures/avatar.jpg";
+        corner_radius_scale = 1.0;
         font_family = "Outfit";
+        panel = {
+          control_center_placement = "attached";
+          control_center_position = "auto";
+          open_near_click_control_center = true;
+          shadow = true;
+          transparency_mode = "glass";
+          wallpaper_placement = "attached";
+          wallpaper_position = "center";
+        };
         screen_corners = {
-            enabled = true;
-            size = 40;
+          enabled = true;
+          size = 32;
         };
         shadow = {
           direction = "center";
@@ -124,53 +130,43 @@
       };
 
       theme = {
-        mode = "auto";
+        mode = "dark";
         source = "wallpaper";
         wallpaper_scheme = "m3-tonal-spot";
         templates = {
-          builtin_ids = [ "cava" "gtk3" "gtk4" "niri"];
+          builtin_ids = [ "gtk3" "gtk4" "niri" ];
           community_ids = [ "discord" "vicinae" "zen-browser" ];
-        };
-      };
-
-      wallpaper = {
-        default = {
-          path = "/home/xonlinex/Pictures/Wallpapers/dyE8BgjS-wallha.com.jpg";
-        };
-        last = {
-          path = "/home/xonlinex/Pictures/Wallpapers/dyE8BgjS-wallha.com.jpg";
-        };
-        monitors = {
-          "HDMI-A-2" = {
-            path = "/home/xonlinex/Pictures/Wallpapers/dyE8BgjS-wallha.com.jpg";
-          };
         };
       };
 
       widget = {
         active_window = {
-          display = "text_only";
+          display = "icon_and_text";
         };
         clock = {
+          capsule = true;
           format = " {:%d %b, %H:%M}";
         };
         control-center = {
           capsule = true;
           capsule_padding = 2;
-          custom_image = "/home/xonlinex/Pictures/elaine-dev-rounded.png";
-          scale = 1.6;
+          # capsule_radius = 20;
+          custom_image = "/home/xonlinex/Pictures/avatar-rounded.png";
+          scale = 1.5;
         };
         cpu = {
           display = "text";
-          stat = "disk_used_pct";
+          stat = "cpu_usage";
+          visualization = "none";
         };
         launcher = {
           capsule = true;
           capsule_padding = 5;
-          custom_image = "/home/xonlinex/Pictures/nixos.png";
+          custom_image = "/home/xonlinex/Pictures/nixos-cendre-50.png";
           scale = 1.25;
         };
         media = {
+          hide_when_no_media = true;
           max_length = 300;
           title_scroll = "always";
         };
@@ -179,10 +175,12 @@
         };
         ram = {
           display = "text";
+          visualization = "none";
         };
         sysmon = {
-          display = "text";
+          show_value = true;
           stat = "disk_used";
+          visualization = "none";
         };
         taskbar = {
           inactive_opacity = 0.7;
@@ -192,6 +190,8 @@
         workspaces = {
           active_pill_size = 2.0;
           empty_color = "secondary";
+          show_labels = true;
+          style = "regular";
         };
       };
     };
