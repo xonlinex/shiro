@@ -9,6 +9,10 @@
     enable = true;
 
     settings = {
+      audio = {
+        enable_sounds = true;
+      };
+
       backdrop = {
         enabled = true;
       };
@@ -30,7 +34,7 @@
           margin_edge = 0;
           margin_ends = 0;
           padding = 15;
-          position = "top";
+          position = "left";
           radius = 16;
           shadow = false;
           widget_spacing = 5;
@@ -137,6 +141,11 @@
           builtin_ids = [ "gtk3" "gtk4" "niri" ];
           community_ids = [ "discord" "vicinae" "zen-browser" ];
         };
+      };
+
+      wallpaper = {
+        transition = [ "disc" "honeycomb" "stripes" ];
+        transition_on_startup = true;
       };
 
       widget = {

@@ -23,17 +23,23 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    qylock.url = "github:Darkkal44/qylock";
+    # qylock.url = "github:Darkkal44/qylock";
+
     import-tree.url = "github:vic/import-tree";
+
+
+    # hyprland-plugins = {
+    #   url = "github:hyprwm/hyprland-plugins";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
-    outputs = { nixpkgs, home-manager, noctalia,zen-browser, firefox-addons, qylock, ... }@inputs:
+  outputs = { nixpkgs, home-manager, noctalia, zen-browser, firefox-addons, qylock, hyprland-plugins, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
     in
   {
-  # Configuración del sistema (equivalente a /etc/nixos)
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       inherit system;
       modules = [
@@ -42,7 +48,6 @@
       ];
     };
 
-    # Configuración de usuario (Home Manager standalone)
     homeConfigurations.xonlinex = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       extraSpecialArgs = { inherit inputs; };

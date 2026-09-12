@@ -6,7 +6,7 @@
     enableFishIntegration = true;
 
     settings = {
-      add_newline = true;
+      add_newline = false;
 
       format = ''
         $os$username[@](white)$hostname$directory$git_branch$git_status$java$python$package$cmd_duration

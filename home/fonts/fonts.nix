@@ -6,6 +6,7 @@
     google-fonts
     # nerdfonts
     nerd-fonts.zed-mono
+    nerd-fonts.victor-mono
 
     # normal fonts
     noto-fonts

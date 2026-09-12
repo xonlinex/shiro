@@ -91,6 +91,7 @@
   #   enableSSHSupport = true;
   # };
   programs.niri.enable = true;
+  # programs.hyprland.enable = true;
   programs.fish.enable = true;
   programs.dconf.enable = true;
   virtualisation.docker.enable = true;
@@ -116,18 +117,19 @@
 	  enable = true;
     wayland.enable = true;
   };
+  services.displayManager.defaultSession = "hyprland";
 
   # theme sddm
-  programs.qylock = {
-    enable = true;
-    theme = "clockwork/orbital";
-    themeOptions = {
-      clockwork.orbital = {
-        themeMode = "dark";
-        enableWindup = false;
-      };
-    };
-  };
+  # programs.qylock = {
+  #   enable = true;
+  #   theme = "clockwork/orbital";
+  #   themeOptions = {
+  #     clockwork.orbital = {
+  #       themeMode = "dark";
+  #       enableWindup = false;
+  #     };
+  #   };
+  # };
 
 
   # Open ports in the firewall.
