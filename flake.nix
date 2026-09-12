@@ -34,7 +34,7 @@
     # };
   };
 
-  outputs = { nixpkgs, home-manager, noctalia, zen-browser, firefox-addons, qylock, hyprland-plugins, ... }@inputs:
+  outputs = { nixpkgs, home-manager, noctalia, zen-browser, firefox-addons, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -43,7 +43,7 @@
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       inherit system;
       modules = [
-        qylock.nixosModules.default
+        # qylock.nixosModules.default
         ./hosts/nixos/configuration.nix
       ];
     };

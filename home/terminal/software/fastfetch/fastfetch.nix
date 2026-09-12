@@ -7,48 +7,48 @@
       "$schema" = "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json";
 
       logo = {
-        source = "${./images/nixos-cendre.png}";
-        height = 10;
+        source = "nixos_small";
+        type = "builtin";
         padding = {
           top = 1;
-          right = 2;
-          left = 2;
+          right = 4;
+          left = 4;
         };
       };
 
       display = {
-        separator = " -> ";
+        separator = "  ";
       };
 
       modules = [
         "break"
         {
           type = "os";
-          key = "  OS";
+          key = "  OS      ";
           format = "{3}";
           keyColor = "red";
         }
         {
           type =  "kernel";
-          key =  "  Kernel";
+          key =  "  Kernel  ";
           format = "{2}";
           keyColor = "red";
         }
         {
           type = "cpu";
           format = "{1} @ {7}";
-          key = "  CPU";
+          key = "  CPU     ";
           keyColor = "blue";
         }
         {
           type = "gpu";
           format = "{1} {2}";
-          key = "󰊴  GPU";
+          key = "󰊴  GPU     ";
           keyColor = "blue";
         }
         {
           type = "memory";
-          key = "  Memory";
+          key = "  Memory  ";
           keyColor = "magenta";
         }
         {
@@ -58,21 +58,21 @@
         }
         {
           type = "wm";
-          key = "  WM ";
+          key = "  WM      ";
           format = "{2} ({3})";
           keyColor = "green";
         }
-        {
-          type = "uptime";
-          key = "󱫐  Uptime ";
-          keyColor = "red";
-        }
+        # {
+        #   type = "uptime";
+        #   key = "󱫐  Uptime  ";
+        #   keyColor = "red";
+        # }
         "break"
-        {
-          type = "colors";
-          paddingLeft = 0;
-          symbol = "circle";
-        }
+        # {
+        #   type = "colors";
+        #   paddingLeft = 0;
+        #   symbol = "circle";
+        # }
       ];
     };
   };

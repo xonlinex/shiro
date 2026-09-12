@@ -15,13 +15,12 @@
       font-size = "17";
 
       # Window
-      window-padding-x = "15";
-      window-padding-y = "15";
-      background-opacity = "0.85";
+      window-padding-x = "10";
+      window-padding-y = "10";
+      background-opacity = "0.90";
 
       # UI
-      # theme = "dark:ember,light:ember-light";
-      theme = "cendre";
+      theme = "dark:Kanso Zen,light:Kanso Pearl";
       window-theme = "system";
       window-decoration = "false";
       scrollbar = "system";

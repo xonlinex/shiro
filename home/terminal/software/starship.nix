@@ -81,8 +81,8 @@
       };
 
       character = {
-        success_symbol = "[>](green)";
-        error_symbol = "[>](red)";
+        success_symbol = "[](green)";
+        error_symbol = "[](red)";
         vicmd_symbol = "[V](green bold)";
         vimcmd_replace_one_symbol = "[R](red bold)";
         vimcmd_visual_symbol = "[V](yellow bold)";

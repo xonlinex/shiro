@@ -8,6 +8,10 @@
       pop_to_root_on_close = true;
       keybinding = "emacs";
 
+      tray = {
+        enabled = false;
+      };
+
       theme = {
         dark = {
           name = "noctalia";
@@ -28,6 +32,11 @@
       launcher_window = {
         rounding = 10;
         opacity = 0.85;
+
+        client_side_decorations = {
+          enabled = true;
+          border_width = 2;
+        };
       };
     };
   };

@@ -117,7 +117,7 @@
 	  enable = true;
     wayland.enable = true;
   };
-  services.displayManager.defaultSession = "hyprland";
+  # services.displayManager.defaultSession = "hyprland";
 
   # theme sddm
   # programs.qylock = {

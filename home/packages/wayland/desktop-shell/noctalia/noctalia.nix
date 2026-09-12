@@ -23,31 +23,32 @@
         default = {
           font_family = "Outfit";
           font_weight = 400;
-          background_opacity = 0.85;
+          background_opacity = 0.90;
           capsule = true;
           capsule_fill = "primary";
-          capsule_opacity = 0.1;
+          capsule_opacity = 0.05;
           capsule_padding = 10.0;
-          capsule_radius = 16;
-          capsule_thickness = 0.8;
-          thickness = 40;
+          capsule_radius = 20;
+          capsule_thickness = 0.7;
+          thickness = 50;
           margin_edge = 0;
           margin_ends = 0;
-          padding = 15;
-          position = "left";
-          radius = 16;
+          padding = 10;
+          position = "top";
+          radius = 0;
           shadow = false;
           widget_spacing = 5;
 
           start = [ "launcher" "workspaces" "active_window" ];
-          center = [ "media" ];
+          center = [ ];
           end = [
+            "media"
             "tray"
             "keyboard_layout"
             "privacy"
             "group:g1"
-            "volume"
             "clock"
+            "volume"
             "notifications"
             "control-center"
           ];
@@ -58,9 +59,9 @@
               enabled = true;
               fill = "primary";
               members = [ "cpu" "ram" "sysmon" ];
-              opacity = 0.1;
+              opacity = 0.05;
               padding = 12.0;
-              radius = 16.0;
+              radius = 20.0;
             }
           ];
         };
@@ -104,7 +105,7 @@
       };
 
       osd = {
-        background_opacity = 0.85;
+        background_opacity = 0.90;
         offset_x = 0;
         offset_y = 20;
         position = "bottom_center";
@@ -116,17 +117,22 @@
         corner_radius_scale = 1.0;
         font_family = "Outfit";
         panel = {
-          control_center_placement = "attached";
+          control_center_placement = "floating";
           control_center_position = "auto";
           open_near_click_control_center = true;
           shadow = true;
+          # BUG: no save folder wallpaper
+          # directory = "~/Pictures/Wallpapers";
+          # directory_light = "~/Pictures/Wallpapers";
+          # directory_dark = "~/Pictures/Wallpapers";
+          launcher_position = "top_left";
           transparency_mode = "glass";
-          wallpaper_placement = "attached";
+          wallpaper_placement = "floating";
           wallpaper_position = "center";
         };
         screen_corners = {
-          enabled = true;
-          size = 32;
+          enabled = false;
+          size = 0;
         };
         shadow = {
           direction = "center";
@@ -151,6 +157,7 @@
       widget = {
         active_window = {
           display = "icon_and_text";
+          max_length = 300;
         };
         clock = {
           capsule = true;
@@ -158,7 +165,7 @@
         };
         control-center = {
           capsule = true;
-          capsule_padding = 2;
+          capsule_padding = 4;
           # capsule_radius = 20;
           custom_image = "/home/xonlinex/Pictures/avatar-rounded.png";
           scale = 1.5;
@@ -170,8 +177,9 @@
         };
         launcher = {
           capsule = true;
-          capsule_padding = 5;
-          custom_image = "/home/xonlinex/Pictures/nixos-cendre-50.png";
+          capsule_padding = 7;
+          capsule_radius = 20;
+          custom_image = "/home/xonlinex/Pictures/nixos-logo.png";
           scale = 1.25;
         };
         media = {
