@@ -80,7 +80,30 @@
       };
 
       dock = {
-        enabled = false;
+        enabled = true;
+        background_opacity = 0.7;
+        cross_axis_padding = 10;
+        icon_size = 40;
+        inactive_opacity = 1.0;
+        inactive_scale = 1.0;
+        item_spacing = 5;
+        main_axis_padding = 10;
+        margin_edge = 10;
+        pinned = [
+          "org.gnome.Nautilus"
+          "zen-beta"
+          "vesktop"
+          "com.mitchellh.ghostty"
+          "org.gnome.Papers"
+          "com.github.neithern.g4music"
+          "org.gnome.Loupe"
+          "mpv"
+          "dev.noctalia.Noctalia"
+          "org.qbittorrent.qBittorrent"
+          "org.gnome.Totem"
+          "postman"
+          "dbeaver"
+        ];
       };
 
       hooks = {
