@@ -15,11 +15,11 @@
     passes = 3;
     offset = 3.0;
     noise = 0.03;
-    saturation = 1.0;
+    saturation = 2.0;
   };
 
   layout = {
-    gaps = 10;
+    gaps = 5;
     center-focused-column = "on-overflow";
     always-center-single-column = {};
     default-column-width = {
@@ -31,7 +31,7 @@
 
     border = {
       on = {};
-      width = 2;
+      width = 1;
       active-color = "#F7DCDE39";
       inactive-color = "#A58A8D39";
     };
@@ -54,7 +54,7 @@
       position = "top";
       place-within-column = {};
       gaps-between-tabs = 5;
-      corner-radius = 10;
+      corner-radius = 16;
     };
   };
 

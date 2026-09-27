@@ -15,18 +15,21 @@
       font-size = "17";
 
       # Window
-      window-padding-x = "20";
-      window-padding-y = "20";
-      background-opacity = "0.9";
+      window-padding-x = "25";
+      window-padding-y = "25";
+      background-opacity = "1.0";
 
       # UI
       # theme = "dark:Kanso Zen,light:Kanso Pearl";
       # theme = "dark:Kanagawa Dragon,light:Kanagawa Lotus";
       # theme = "dark:Catppuccin Mocha,light:Catppuccin Latte";
-      theme = "dark:tokyonight-night, light:TokyoNight Day";
+      # theme = "dark:tokyonight-night, light:TokyoNight Day";
+      # theme = "dark:Gruvbox Dark, light:Gruvbox Light";
       # theme = "dark:Rose Pine,light:Rose Pine Dawn";
       # theme = "Jellybeans";
       # theme = "sora";
+      # theme = "luna";
+      theme = "cendre-medium";
       window-theme = "system";
       window-decoration = "false";
       scrollbar = "system";

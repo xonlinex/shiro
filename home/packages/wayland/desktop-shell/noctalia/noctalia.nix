@@ -1,5 +1,11 @@
 { inputs, ... }:
 
+let
+  rounding = 20;
+  general-opacity = 1.0;
+  capsule_opacity = 0.1;
+  dock-opacity = 0.8;
+in
 {
   imports = [
     inputs.noctalia.homeModules.default
@@ -23,19 +29,19 @@
         default = {
           font_family = "Outfit";
           font_weight = 400;
-          background_opacity = 0.8;
+          background_opacity = general-opacity;
           capsule = true;
-          capsule_fill = "surface_variant";
-          capsule_opacity = 1.0;
+          capsule_fill = "primary";
+          capsule_opacity = capsule_opacity;
           capsule_padding = 10.0;
-          capsule_radius = 20;
+          capsule_radius = rounding;
           capsule_thickness = 0.7;
           thickness = 50;
           margin_edge = 0;
           margin_ends = 0;
           padding = 10;
           position = "top";
-          radius = 16;
+          radius = rounding;
           shadow = false;
           widget_spacing = 5;
           start = [ "launcher" "workspaces" "taskbar" "active_window" ];
@@ -54,11 +60,11 @@
             {
               id = "g1";
               enabled = true;
-              fill = "surface_variant";
+              fill = "primary";
               members = [ "cpu" "ram" "sysmon" ];
-              opacity = 1.0;
+              opacity = capsule_opacity;
               padding = 12.0;
-              radius = 20.0;
+              radius = rounding;
             }
           ];
         };
@@ -81,14 +87,16 @@
 
       dock = {
         enabled = true;
-        background_opacity = 0.7;
+        background_opacity = dock-opacity;
         cross_axis_padding = 10;
         icon_size = 40;
         inactive_opacity = 1.0;
         inactive_scale = 1.0;
         item_spacing = 5;
-        main_axis_padding = 10;
         margin_edge = 10;
+        edge_margin = 5;
+        show_dots = true;
+        radius = rounding;
         pinned = [
           "org.gnome.Nautilus"
           "zen-beta"
@@ -119,13 +127,13 @@
       };
 
       notification = {
-        background_opacity = 0.9;
+        background_opacity = general-opacity;
         max_visible = 3;
         offset_y = 20;
       };
 
       osd = {
-        background_opacity = 0.9;
+        background_opacity = general-opacity;
         offset_x = 0;
         offset_y = 20;
         position = "bottom_center";
@@ -147,7 +155,7 @@
         };
         screen_corners = {
           enabled = true;
-          size = 32;
+          size = rounding * 2;
         };
         shadow = {
           direction = "center";
@@ -193,10 +201,11 @@
         };
         launcher = {
           capsule = true;
-          capsule_padding = 7;
-          capsule_radius = 20;
-          custom_image = "/home/xonlinex/Pictures/nixos-logo.png";
-          scale = 1.25;
+          # capsule_padding = 7;
+          capsule_radius = rounding;
+          scale = 1.0;
+          color = "primary";
+          glyph = "flare-filled";
         };
         media = {
           hide_when_no_media = true;

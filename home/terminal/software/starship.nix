@@ -11,7 +11,7 @@
       # command_timeout = 500;
 
       format = ''
-        [╭─](bold 8) $directory$git_branch$git_status$cmd_duration$nix_shell
+        $directory$git_branch$git_status$cmd_duration$nix_shell
         $character'';
 
       # status = {
@@ -35,7 +35,7 @@
       };
 
       character = {
-        format = ''[╰─$symbol](8) '';
+        # format = ''[╰─$symbol](8) '';
         success_symbol = "[](green)";
         error_symbol = "[](red)";
         vicmd_symbol = "[V](green bold)";
@@ -59,7 +59,7 @@
 
       directory = {
         format = "[$path]($style) ";
-        style = "bold blue";
+        style = "bold yellow";
         truncation_length = 1;
         truncation_symbol = "";
         home_symbol = "~";
