@@ -15,8 +15,8 @@
       font-size = "17";
 
       # Window
-      window-padding-x = "25";
-      window-padding-y = "25";
+      window-padding-x = "20";
+      window-padding-y = "20";
       background-opacity = "0.95";
 
       # UI
