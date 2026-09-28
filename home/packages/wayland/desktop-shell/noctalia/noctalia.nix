@@ -5,6 +5,7 @@ let
   general-opacity = 1.0;
   capsule_opacity = 0.1;
   dock-opacity = 0.8;
+  osd-opacity = 0.8;
 in
 {
   imports = [
@@ -27,7 +28,7 @@ in
         order = [ "default" ];
 
         default = {
-          font_family = "Outfit";
+          font_family = "SF Pro Display";
           font_weight = 400;
           background_opacity = general-opacity;
           capsule = true;
@@ -127,13 +128,13 @@ in
       };
 
       notification = {
-        background_opacity = general-opacity;
+        background_opacity = osd-opacity;
         max_visible = 3;
         offset_y = 20;
       };
 
       osd = {
-        background_opacity = general-opacity;
+        background_opacity = osd-opacity;
         offset_x = 0;
         offset_y = 20;
         position = "bottom_center";
@@ -143,7 +144,7 @@ in
         app_icon_color = "secondary";
         avatar_path = "/home/xonlinex/Pictures/avatar.jpg";
         corner_radius_scale = 1.0;
-        font_family = "Outfit";
+        font_family = "SF Pro Display";
         panel = {
           control_center_placement = "attached";
           control_center_position = "auto";

@@ -8,10 +8,11 @@
       local_folders = [ "${config.home.homeDirectory}/Music" ];
 
       appearance = {
-        theme = "dark";
+        theme = "system";
         adaptive_theme = false;
+        rounding = "round";
         transparent = true;
-        transparency = 0.20;
+        transparency = 0.2;
       };
     };
   };

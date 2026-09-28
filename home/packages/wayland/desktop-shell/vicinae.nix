@@ -24,13 +24,13 @@
       };
       font = {
         normal = {
-          family = "Outfit";
-          size = 11;
+          family = "SF Pro Dispaly";
+          size = 10;
         };
       };
 
       launcher_window = {
-        rounding = 10;
+        rounding = 16;
         opacity = 0.9;
 
         client_side_decorations = {

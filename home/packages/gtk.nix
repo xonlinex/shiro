@@ -43,7 +43,7 @@ in
   gtk = {
     enable = true;
     font = {
-      name = "Outfit";
+      name = "SF Pro Display";
       size = 12;
     };
     iconTheme = {

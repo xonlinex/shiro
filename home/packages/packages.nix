@@ -4,7 +4,6 @@
   home.packages = with pkgs; [
     # apps
     gapless
-    vesktop
     nautilus
     loupe
     papers
