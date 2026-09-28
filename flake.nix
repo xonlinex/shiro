@@ -5,6 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     import-tree.url = "github:vic/import-tree";
     qylock.url = "github:Darkkal44/qylock";
+    sonora.url = "github:sonorahq/sonora";
 
     home-manager = {
       url = "github:nix-community/home-manager";

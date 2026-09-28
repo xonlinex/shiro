@@ -42,7 +42,7 @@ in
           padding = 10;
           position = "top";
           radius = rounding;
-          shadow = false;
+          shadow = true;
           widget_spacing = 5;
           start = [ "launcher" "workspaces" "taskbar" "active_window" ];
           center = [ "clock" ];
@@ -98,19 +98,19 @@ in
         show_dots = true;
         radius = rounding;
         pinned = [
-          "org.gnome.Nautilus"
           "zen-beta"
-          "vesktop"
-          "com.mitchellh.ghostty"
-          "org.gnome.Papers"
+          "org.gnome.Nautilus"
           "com.github.neithern.g4music"
-          "org.gnome.Loupe"
+          "sonora"
           "mpv"
-          "dev.noctalia.Noctalia"
-          "org.qbittorrent.qBittorrent"
           "org.gnome.Totem"
+          "org.gnome.Papers"
+          "org.gnome.Loupe"
+          "com.mitchellh.ghostty"
           "postman"
           "dbeaver"
+          "vesktop"
+          "org.qbittorrent.qBittorrent"
         ];
       };
 
@@ -168,7 +168,7 @@ in
         wallpaper_scheme = "m3-content";
         templates = {
           builtin_ids = [ "gtk3" "gtk4" "niri" ];
-          community_ids = [ "discord" "vicinae" "zen-browser" "papirus-icons" ];
+          community_ids = [ "discord" "vicinae" "zen-browser" "papirus-icons" "sonora"];
         };
       };
 
@@ -211,6 +211,10 @@ in
           hide_when_no_media = true;
           max_length = 300;
           title_scroll = "always";
+          actions = {
+            scroll_up = "media previous";
+            scroll_down = "media next";
+          };
         };
         privacy = {
           hide_inactive = true;
@@ -231,8 +235,10 @@ in
         };
         workspaces = {
           active_pill_size = 2.5;
+          capsule = true;
+          capsule_padding = 10;
           empty_color = "secondary";
-          pill_scale = 0.7;
+          pill_scale = 0.6;
           show_labels = false;
           style = "regular";
         };

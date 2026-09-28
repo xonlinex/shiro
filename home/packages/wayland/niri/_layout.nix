@@ -19,7 +19,7 @@
   };
 
   layout = {
-    gaps = 5;
+    gaps = 10;
     center-focused-column = "on-overflow";
     always-center-single-column = {};
     default-column-width = {
@@ -32,7 +32,7 @@
     border = {
       on = {};
       width = 1;
-      active-color = "#F7DCDE39";
+      # active-color = "#F7DCDE39";
       inactive-color = "#A58A8D39";
     };
 
