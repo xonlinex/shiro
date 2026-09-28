@@ -1,0 +1,27 @@
+## name: evergarden summer green
+## author: comfysage
+## license: GPL-3.0
+## blurb: a comfy colorscheme for cozy morning coding
+
+palette = 0=#e6e1d3
+palette = 1=#c58687
+palette = 2=#91a77a
+palette = 3=#c4aa80
+palette = 4=#8294ad
+palette = 5=#c499b8
+palette = 6=#74a48b
+palette = 7=#576869
+palette = 8=#829084
+palette = 9=#c58687
+palette = 10=#91a77a
+palette = 11=#c4aa80
+palette = 12=#8294ad
+palette = 13=#c499b8
+palette = 14=#74a48b
+palette = 15=#455355
+background = f5efe6
+foreground = 2b3034
+cursor-color = 91a77a
+cursor-text = e8ded5
+selection-background = e6e1d3
+selection-foreground = 2b3034

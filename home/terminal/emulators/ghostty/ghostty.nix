@@ -17,7 +17,7 @@
       # Window
       window-padding-x = "20";
       window-padding-y = "20";
-      background-opacity = "0.95";
+      background-opacity = "0.90";
 
       # UI
       # theme = "dark:Kanso Zen,light:Kanso Pearl";
@@ -26,10 +26,12 @@
       # theme = "dark:tokyonight-night, light:TokyoNight Day";
       # theme = "dark:Gruvbox Dark, light:Gruvbox Light";
       # theme = "dark:Rose Pine,light:Rose Pine Dawn";
+      # theme = "dark:evergarden-winter, light:evergarden-summer";
       # theme = "Jellybeans";
       # theme = "sora";
       # theme = "luna";
-      theme = "cendre-medium";
+      theme = "cendre";
+
       window-theme = "system";
       window-decoration = "false";
       scrollbar = "system";

@@ -32,7 +32,7 @@
     border = {
       on = {};
       width = 1;
-      # active-color = "#F7DCDE39";
+      active-color = "#F7DCDE39";
       inactive-color = "#A58A8D39";
     };
 

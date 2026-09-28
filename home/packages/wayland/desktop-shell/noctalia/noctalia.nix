@@ -1,6 +1,9 @@
-{ inputs, ... }:
+{ inputs, config, ... }:
 
 let
+  monitor = "HDMI-A-2";
+  username = "${config.home.username}";
+  pfp = "${config.home.homeDirectory}/Pictures/avatar-rounded.png";
   rounding = 20;
   general-opacity = 1.0;
   capsule_opacity = 0.1;
@@ -87,7 +90,7 @@ in
       };
 
       dock = {
-        enabled = true;
+        enabled = false;
         background_opacity = dock-opacity;
         cross_axis_padding = 10;
         icon_size = 40;
@@ -123,6 +126,113 @@ in
         auto_locate = true;
       };
 
+      lockscreen_widgets = {
+        enabled = true;
+        schema_version = 2;
+        widget_order = [
+          "lockscreen-login-box@${monitor}"
+          "lockscreen-widget-0000000000000008"
+          "lockscreen-widget-000000000000000b"
+          "lockscreen-widget-000000000000000a"
+          "lockscreen-widget-000000000000000c"
+        ];
+
+        widget = {
+          "lockscreen-login-box@${monitor}" = {
+            box_height = 70.0;
+            box_width = 330.0;
+            cx = 1280.0;
+            cy = 1260.0;
+            output = "${monitor}";
+            # placement_height = 1440.0;
+            # placement_width = 2560.0;
+            type = "login_box";
+            settings = {
+              background_color = "surface";
+              background_opacity = osd-opacity;
+              background_radius = rounding;
+              center_password_text = true;
+              input_radius = 10.0;
+              layout = "regular";
+            };
+          };
+
+          lockscreen-widget-0000000000000008 = {
+            box_height = 100.0;
+            box_width = 200.0;
+            cx = 2440.0;
+            cy = 70.0;
+            output = "${monitor}";
+            # placement_height = 1440.0;
+            # placement_width = 2560.0;
+            type = "clock";
+            settings = {
+              background_color = "surface";
+              background_opacity = osd-opacity;
+              background_padding = 20;
+              background_radius = rounding;
+              # clock_style = "digital";
+              color = "on_surface";
+              format = "{:%I:%M %p}";
+            };
+          };
+
+          lockscreen-widget-000000000000000a = {
+            box_height = 0.0;
+            box_width = 0.0;
+            cx = 1280.0;
+            cy = 600.0;
+            output = "${monitor}";
+            # placement_height = 1440.0;
+            # placement_width = 2560.0;
+            type = "sticker";
+            settings = {
+              background_opacity = 0.0;
+              image_path = pfp;
+            };
+          };
+
+          lockscreen-widget-000000000000000b = {
+            box_height = 576.0;
+            box_width = 608.0;
+            cx = 1280.0;
+            cy = 600.0;
+            output = "${monitor}";
+            # placement_height = 1440.0;
+            # placement_width = 2560.0;
+            type = "fancy_audio_visualizer";
+            settings = {
+              background = false;
+              inner_diameter = 0.7;
+              rotation_speed = 0.5;
+              secondary_color = "secondary";
+              sensitivity = 0.5;
+              visualization_mode = "wave";
+              wave_thickness = 0.3;
+            };
+          };
+
+          lockscreen-widget-000000000000000c = {
+            box_height = 40.0;
+            box_width = 120.0;
+            cx = 1280.0;
+            cy = 750.0;
+            output = "${monitor}";
+            # placement_height = 1440.0;
+            # placement_width = 2560.0;
+            type = "label";
+            settings = {
+              background_color = "primary";
+              background_opacity = 0.2;
+              background_padding = 10;
+              background_radius = rounding;
+              shadow = true;
+              title = username;
+            };
+          };
+        };
+      };
+
       nightlight = {
         enabled = true;
       };
@@ -142,7 +252,7 @@ in
 
       shell = {
         app_icon_color = "secondary";
-        avatar_path = "/home/xonlinex/Pictures/avatar.jpg";
+        avatar_path = pfp;
         corner_radius_scale = 1.0;
         font_family = "SF Pro Display";
         panel = {
@@ -192,7 +302,7 @@ in
           capsule_padding = 4;
           # capsule_fill = "primary";
           # capsule_radius = 20;
-          custom_image = "/home/xonlinex/Pictures/avatar-rounded.png";
+          custom_image = pfp;
           scale = 1.5;
         };
         cpu = {

@@ -20,7 +20,6 @@
     dbeaver-bin
     postman
     neovim
-    ghostty
     # nodejs
     # openjdk21
     # python3
