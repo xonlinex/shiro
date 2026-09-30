@@ -15,11 +15,11 @@
       theme = {
         dark = {
           name = "noctalia";
-          icon_theme = "Papirus";
+          icon_theme = "MacTahoe";
         };
         light = {
           name = "noctalia";
-          icon_theme = "Papirus";
+          icon_theme = "MacTahoe";
         };
       };
       font = {

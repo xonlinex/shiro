@@ -1,24 +1,24 @@
 { pkgs, config, ... }:
 let
-  # mactahoe-icon-theme = pkgs.stdenv.mkDerivation {
-  #   pname = "mactahoe-icon-theme";
-  #   version = "unstable-2026-08-05";
-  #   src = pkgs.fetchFromGitHub {
-  #     owner = "vinceliuice";
-  #     repo = "MacTahoe-icon-theme";
-  #     rev = "main";
-  #     hash = "sha256-Ho71thvHpgQICfC0c67ClKRONdDeNVfg0bGU6ZjM3S8=";
-  #   };
-  #   nativeBuildInputs = [ pkgs.gtk3 ];
-  #   installPhase = ''
-  #     runHook preInstall
-  #     mkdir -p $out/share/icons
-  #     patchShebangs install.sh
-  #     ./install.sh -n MacTahoe -d $out/share/icons
-  #     find $out/share/icons -xtype l -delete
-  #     runHook postInstall
-  #   '';
-  # };
+  mactahoe-icon-theme = pkgs.stdenv.mkDerivation {
+    pname = "mactahoe-icon-theme";
+    version = "unstable-2026-08-05";
+    src = pkgs.fetchFromGitHub {
+      owner = "vinceliuice";
+      repo = "MacTahoe-icon-theme";
+      rev = "839848b9a8a38a92a6936e30c4abe35cc6f2546d";
+      hash = "sha256-NAahlBOYub0QlqkYStamoCbyWh+H5JG/iFm4Ws9EU3A=";
+    };
+    nativeBuildInputs = [ pkgs.gtk3 ];
+    installPhase = ''
+      runHook preInstall
+      mkdir -p $out/share/icons
+      patchShebangs install.sh
+      ./install.sh -n MacTahoe -d $out/share/icons
+      find $out/share/icons -xtype l -delete
+      runHook postInstall
+    '';
+  };
 in
 {
   home.packages = with pkgs; [
@@ -31,8 +31,9 @@ in
     ffmpegthumbnailer
     totem
     tumbler
-    papirus-icon-theme
+    # papirus-icon-theme
     # papirus-folders
+    # colloid-icons-orange
   ];
 
   home.file = {
@@ -47,8 +48,8 @@ in
       size = 12;
     };
     iconTheme = {
-      name = "Papirus";
-      # package = pkgs.whitesur-icon-theme;
+      name = "MacTahoe";
+      package = mactahoe-icon-theme;
     };
     gtk3.bookmarks = [
       "file://${config.home.homeDirectory}/Downloads"

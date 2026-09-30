@@ -97,6 +97,7 @@ in
         inactive_opacity = 1.0;
         inactive_scale = 1.0;
         item_spacing = 5;
+        launcher_position = "end";
         margin_edge = 10;
         edge_margin = 5;
         show_dots = true;
@@ -226,7 +227,7 @@ in
               background_opacity = 0.2;
               background_padding = 10;
               background_radius = rounding;
-              shadow = true;
+              shadow = false;
               title = username;
             };
           };
