@@ -280,7 +280,7 @@ in
         wallpaper_scheme = "m3-content";
         templates = {
           builtin_ids = [ "gtk3" "gtk4" "niri" ];
-          community_ids = [ "discord" "vicinae" "zen-browser" "papirus-icons" "sonora"];
+          community_ids = [ "discord" "vicinae" "zen-browser" "sonora"];
         };
       };
 

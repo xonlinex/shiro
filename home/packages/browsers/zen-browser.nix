@@ -1,4 +1,4 @@
-{ pkgs, inputs, config, ... }:
+{ pkgs, inputs, config, username, ... }:
 
 {
   imports = [
@@ -8,7 +8,7 @@
   programs.zen-browser = {
     enable = true;
 
-    profiles.xonlinex = {
+    profiles.${username} = {
       id = 0;
       isDefault = true;
 
@@ -34,11 +34,11 @@
     };
   };
 
-  home.file.".config/zen/xonlinex/chrome/userChrome.css".text = ''
+  home.file.".config/zen/${username}/chrome/userChrome.css".text = ''
     @import "${config.home.homeDirectory}/.cache/noctalia/zen-browser/zen-userChrome.css";
   '';
 
-  home.file.".config/zen/xonlinex/chrome/userContent.css".text = ''
+  home.file.".config/zen/${username}/chrome/userContent.css".text = ''
     @import "${config.home.homeDirectory}/.cache/noctalia/zen-browser/zen-userContent.css";
   '';
 }
