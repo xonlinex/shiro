@@ -24,7 +24,6 @@
         plugin = continuum;
         extraConfig = ''
           set -g @continuum-restore 'on'
-          set -g @continuum-boot 'on'
           set -g @continuum-save-interval '10'
         '';
       }
@@ -36,13 +35,13 @@
       set -g status-justify "left"
       set -g status-left-length 100
       set -g status-right-length 100
-      set -g status-style "bg=default,fg=default"
+      set -g status-style "bg=default,fg=black"
       set -g status-left "#[bg=magenta,fg=black]  #[bg=magenta,fg=black]#S #[fg=magenta,bg=colour8] "
       set -g status-right "#{?client_prefix,#[fg=green#,bg=default]#[bg=green#,fg=black] PREFIX ,}#[fg=blue,bg=#{?client_prefix,green,default}]#[bg=blue,fg=black] #(whoami)@#(uname -n) "
 
-      set -g window-status-separator "#[bg=colour8,fg=black]  "
-      set -g window-status-format "#[bg=colour8,fg=black]#W#{?window_end_flag,#[fg=default#,bg=colour8] ,}#{?window_end_flag,#[fg=colour8#,bg=default],}"
-      set -g window-status-current-format "#[bg=colour8,fg=#{?window_zoomed_flag,yellow,white},bold]#W#{?window_end_flag,#[fg=default#,bg=colour8] ,}#{?window_end_flag,#[fg=colour8#,bg=default],}"
+      set -g window-status-separator "#[bg=colour8,fg=default]  "
+      set -g window-status-format "#[bg=colour8,fg=default]#W#{?window_end_flag,#[fg=default#,bg=colour8] ,}#{?window_end_flag,#[fg=colour8#,bg=default],}"
+      set -g window-status-current-format "#[bg=colour8,fg=#{?window_zoomed_flag,yellow,green},bold]#W#{?window_end_flag,#[fg=default#,bg=colour8] ,}#{?window_end_flag,#[fg=colour8#,bg=default],}"
 
       ### GENERAL ###
       bind r source-file ~/.config/tmux/tmux.conf \; display "Config reloaded!"
@@ -96,6 +95,8 @@
       set -g pane-border-style fg=black
       set -g pane-border-lines single
       set -g pane-active-border-style fg=green
+
+      # run-shell ${pkgs.tmuxPlugins.continuum.rtp}
     '';
   };
 }

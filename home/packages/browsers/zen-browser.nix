@@ -1,5 +1,9 @@
-{ pkgs, inputs, config, username, ... }:
+{ pkgs, inputs, config, ... }:
 
+
+let
+  username = "${config.home.username}";
+in
 {
   imports = [
     inputs.zen-browser.homeModules.default
@@ -30,6 +34,12 @@
         "zen.widget.linux.transparency" = false;
         "signon.rememberSignons" = false;
         "browser.ctrlTab.sortByRecentlyUsed" = true;
+
+        # Hardware video acceleration
+        "gfx.webrender.all" = true;
+        "media.ffmpeg.vaapi.enabled" = true;
+        "media.hardware-video-decoding.enabled" = true;
+        "widget.use-aspect-ratio" = true;
       };
     };
   };

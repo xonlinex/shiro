@@ -10,8 +10,9 @@
     wayland.enable = true;
   };
 
+  # SDDM theme
   programs.qylock = {
     enable = true;
-    theme = "material-you-dark";
+    theme = "dog-samurai";
   };
 }

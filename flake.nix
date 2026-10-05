@@ -42,22 +42,23 @@
       ...
     }@inputs:
     let
-      inherit (import ./hosts/nixos/user.nix) username fullName;
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit inputs username fullName; };
+        specialArgs = { inherit inputs; };
         modules = [
           ./hosts/nixos/configuration.nix
+          ./system/default.nix
         ];
       };
 
-      homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
+      # WARNING: verify user
+      homeConfigurations.xonlinex = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        extraSpecialArgs = { inherit inputs username; };
+        extraSpecialArgs = { inherit inputs; };
         modules = [
           ./home/default.nix
         ];

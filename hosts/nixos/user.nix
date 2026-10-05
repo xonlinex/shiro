@@ -1,4 +1,0 @@
-{
-  username = "xonlinex";
-  fullName = "xOnlinEx";
-}

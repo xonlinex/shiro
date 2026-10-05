@@ -1,13 +1,14 @@
-{ config, pkgs, username, fullName, ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [
     ./hardware-configuration.nix
     ./displaymanager.nix
+    ../../system/hardware/desktop/graphics.nix
   ];
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_zen;
 
     loader = {
       efi.canTouchEfiVariables = true;
@@ -48,10 +49,10 @@
   # Habilitar gestión de ratón y touchpad
   # services.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users."${username}" = {
+  # WARNING: verify user
+  users.users.xonlinex = {
     isNormalUser = true;
-    description = "${fullName}";
+    description = "xOnlinEx";
     extraGroups = [ "networkmanager" "wheel" "docker"];
     shell = pkgs.fish;
   };
@@ -92,6 +93,7 @@
 	  alsa.enable = true;
 	  pulse.enable = true;
   };
+
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = false;
@@ -100,11 +102,6 @@
   services.power-profiles-daemon.enable = true;
 
   # services.xserver.enable = true;
-
-  services.displayManager.sddm = {
-	  enable = true;
-    wayland.enable = true;
-  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

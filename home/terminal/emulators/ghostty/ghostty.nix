@@ -17,7 +17,7 @@
       # Window
       window-padding-x = "20";
       window-padding-y = "20";
-      background-opacity = "0.90";
+      background-opacity = "0.9";
 
       # UI
       # theme = "dark:Kanso Zen,light:Kanso Pearl";

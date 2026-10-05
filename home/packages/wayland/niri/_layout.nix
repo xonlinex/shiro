@@ -15,17 +15,19 @@
     passes = 3;
     offset = 3.0;
     noise = 0.03;
-    saturation = 2.0;
+    saturation = 1.5;
   };
 
   layout = {
     gaps = 10;
     center-focused-column = "on-overflow";
     always-center-single-column = {};
-    default-column-width = {
-      proportion = 0.5;
-    };
     background-color = "#000000";
+
+    default-column-width = {
+      proportion = 0.6;
+    };
+
 
     focus-ring.off = {};
 

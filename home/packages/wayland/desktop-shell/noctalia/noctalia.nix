@@ -9,6 +9,7 @@ let
   capsule_opacity = 0.1;
   dock-opacity = 0.8;
   osd-opacity = 0.8;
+  status_shadow = false;
 in
 {
   imports = [
@@ -46,7 +47,7 @@ in
           padding = 10;
           position = "top";
           radius = rounding;
-          shadow = true;
+          shadow = status_shadow;
           widget_spacing = 5;
           start = [ "launcher" "workspaces" "taskbar" "active_window" ];
           center = [ "clock" ];
@@ -92,6 +93,7 @@ in
       dock = {
         enabled = false;
         background_opacity = dock-opacity;
+        shadow = status_shadow;
         cross_axis_padding = 10;
         icon_size = 40;
         inactive_opacity = 1.0;
@@ -227,7 +229,7 @@ in
               background_opacity = 0.2;
               background_padding = 10;
               background_radius = rounding;
-              shadow = false;
+              shadow = status_shadow;
               title = username;
             };
           };
@@ -260,7 +262,7 @@ in
           control_center_placement = "attached";
           control_center_position = "auto";
           open_near_click_control_center = true;
-          shadow = true;
+          shadow = status_shadow;
           launcher_position = "top_left";
           transparency_mode = "glass";
           wallpaper_placement = "attached";

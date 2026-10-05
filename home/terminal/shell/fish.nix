@@ -14,6 +14,7 @@
       z = "zoxide";
       ff = "fastfetch";
       ss = "sesh connect (sesh list | fzf)";
+      v = "nvim";
     };
 
     shellAbbrs = {
