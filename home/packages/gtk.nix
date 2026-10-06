@@ -31,6 +31,7 @@ in
     ffmpegthumbnailer
     totem
     tumbler
+    unrar
     # papirus-icon-theme
     # papirus-folders
     # colloid-icons-orange

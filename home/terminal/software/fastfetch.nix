@@ -1,5 +1,4 @@
 { pkgs, ... }:
-
 {
   programs.fastfetch = {
     enable = true;
@@ -9,6 +8,14 @@
       logo = {
         source = "nixos_small";
         type = "builtin";
+        color = {
+          "1" = "blue";
+          "2" = "magenta";
+          "3" = "blue";
+          "4" = "magenta";
+          "5" = "blue";
+          "6" = "magenta";
+        };
         padding = {
           top = 1;
           right = 4;

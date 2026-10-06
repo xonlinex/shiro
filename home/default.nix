@@ -1,7 +1,7 @@
-{ inputs, pkgs, ... }: {
-  home.username = "xonlinex";
-  home.homeDirectory = "/home/xonlinex";
-  home.stateVersion = "26.05";
+{ inputs, pkgs, username, ... }: {
+  home.username = username;
+  home.homeDirectory = "/home/${username}";
+  home.stateVersion = "26.11";
 
   imports = [
     (inputs.import-tree ./packages)

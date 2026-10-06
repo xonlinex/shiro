@@ -42,6 +42,8 @@
       ...
     }@inputs:
     let
+      # WARNING: verify user
+      username = "xonlinex";
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
     in
@@ -55,10 +57,9 @@
         ];
       };
 
-      # WARNING: verify user
-      homeConfigurations.xonlinex = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        extraSpecialArgs = { inherit inputs; };
+        extraSpecialArgs = { inherit inputs username; };
         modules = [
           ./home/default.nix
         ];

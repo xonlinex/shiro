@@ -24,10 +24,9 @@
     always-center-single-column = {};
     background-color = "#000000";
 
-    default-column-width = {
-      proportion = 0.6;
-    };
-
+    # default-column-width = {
+    #   proportion = 0.6;
+    # };
 
     focus-ring.off = {};
 

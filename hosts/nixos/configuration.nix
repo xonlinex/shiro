@@ -4,11 +4,10 @@
   imports = [
     ./hardware-configuration.nix
     ./displaymanager.nix
-    ../../system/hardware/desktop/graphics.nix
   ];
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_zen;
+    kernelPackages = pkgs.linuxPackages_latest;
 
     loader = {
       efi.canTouchEfiVariables = true;
@@ -64,6 +63,13 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     brightnessctl
+    ffmpegthumbnailer
+    gst_all_1.gstreamer
+    gst_all_1.gst-plugins-base
+    gst_all_1.gst-plugins-good
+    gst_all_1.gst-plugins-bad
+    gst_all_1.gst-plugins-ugly
+    gst_all_1.gst-libav
   ];
 
   # environment.variables = {
@@ -78,7 +84,8 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-  programs.niri.enable = true;
+  # programs.niri.enable = true;
+  services.desktopManager.gnome.enable = true;
   programs.fish.enable = true;
   programs.dconf.enable = true;
 
