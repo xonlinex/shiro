@@ -1,14 +1,18 @@
 { pkgs, ... }:
 
+let
+  main = "#e08060";
+  muted = "#b8ac96";
+in
 {
   programs.tmux = {
     enable = true;
-    shortcut = "Space"; # Prefix Crtl+Space
+    shortcut = "Space"; # Prefix Ctrl+Space
     terminal = "tmux-256color";
     mouse = true;
     keyMode = "vi";
 
-    # Plugins with NIX
+    # Plugins con NIX
     plugins = with pkgs.tmuxPlugins; [
       vim-tmux-navigator
       yank
@@ -35,13 +39,13 @@
       set -g status-justify "left"
       set -g status-left-length 100
       set -g status-right-length 100
-      set -g status-style "bg=default,fg=black"
-      set -g status-left "#[bg=magenta,fg=black]  #[bg=magenta,fg=black]#S #[fg=magenta,bg=colour8] "
-      set -g status-right "#{?client_prefix,#[fg=green#,bg=default]#[bg=green#,fg=black] PREFIX ,}#[fg=blue,bg=#{?client_prefix,green,default}]#[bg=blue,fg=black] #(whoami)@#(uname -n) "
+      set -g status-style "bg=default,fg=${muted}"
+      set -g status-left "#[bg=${main},fg=black]  #[bg=${main},fg=black]#S #[fg=${main},bg=default] "
+      set -g status-right "#{?client_prefix,#[fg=${main},bg=default]#[bg=${main},fg=black,bold] PREFIX ,}#[fg=${muted},bg=#{?client_prefix,${main},default}]#[bg=${muted},fg=black] #(whoami)@#(uname -n) "
 
-      set -g window-status-separator "#[bg=colour8,fg=default]  "
-      set -g window-status-format "#[bg=colour8,fg=default]#W#{?window_end_flag,#[fg=default#,bg=colour8] ,}#{?window_end_flag,#[fg=colour8#,bg=default],}"
-      set -g window-status-current-format "#[bg=colour8,fg=#{?window_zoomed_flag,yellow,green},bold]#W#{?window_end_flag,#[fg=default#,bg=colour8] ,}#{?window_end_flag,#[fg=colour8#,bg=default],}"
+      set -g window-status-separator "#[fg=${muted}]  "
+      set -g window-status-format "#[fg=${muted}]#W#{?window_end_flag, ,}"
+      set -g window-status-current-format "#[fg=${main},bold]#W#{?window_end_flag, ,}"
 
       ### GENERAL ###
       bind r source-file ~/.config/tmux/tmux.conf \; display "Config reloaded!"
@@ -51,8 +55,8 @@
       set -as terminal-features ",xterm-ghostty:RGB"
       set -g allow-passthrough on
 
-      ### SESH (OPCIÓN A) ###
-      set -g detach-on-destroy off # Mantiene tmux abierto al cerrar la última ventana de una sesión
+      ### SESH ###
+      set -g detach-on-destroy off
 
       # Prefix + T: Selector flotante con FZF
       bind-key "T" run-shell "sesh connect \"$( \
@@ -92,11 +96,9 @@
       bind -r k resize-pane -U 5
 
       ### PANE ###
-      set -g pane-border-style fg=black
+      set -g pane-border-style fg=${muted}
       set -g pane-border-lines single
-      set -g pane-active-border-style fg=green
-
-      # run-shell ${pkgs.tmuxPlugins.continuum.rtp}
+      set -g pane-active-border-style fg=${main}
     '';
   };
 }

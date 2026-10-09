@@ -1,6 +1,7 @@
 { pkgs, ... }:
 
 {
+  # DESKTOP (Ryzen 5 5600G + iGPU)
   boot.initrd.kernelModules = [ "amdgpu" ];
   services.xserver.videoDrivers = [ "amdgpu" ];
 

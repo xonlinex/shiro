@@ -63,13 +63,6 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     brightnessctl
-    ffmpegthumbnailer
-    gst_all_1.gstreamer
-    gst_all_1.gst-plugins-base
-    gst_all_1.gst-plugins-good
-    gst_all_1.gst-plugins-bad
-    gst_all_1.gst-plugins-ugly
-    gst_all_1.gst-libav
   ];
 
   # environment.variables = {
@@ -84,13 +77,11 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-  # programs.niri.enable = true;
-  services.desktopManager.gnome.enable = true;
+  programs.niri.enable = true;
   programs.fish.enable = true;
   programs.dconf.enable = true;
 
   virtualisation.docker.enable = true;
-  # programs.hyprland.enable = true;
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
@@ -123,5 +114,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "26.05"; # Did you read the comment?
-
 }

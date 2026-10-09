@@ -23,18 +23,14 @@ in
 {
   home.packages = with pkgs; [
     bibata-cursors
+    apple-cursor
     gsettings-desktop-schemas
     glib
     xdg-user-dirs
     adw-gtk3
     ffmpeg-headless
     ffmpegthumbnailer
-    totem
-    tumbler
     unrar
-    # papirus-icon-theme
-    # papirus-folders
-    # colloid-icons-orange
   ];
 
   home.file = {
@@ -62,4 +58,12 @@ in
       "file://${config.home.homeDirectory}/repos"
     ];
   };
+
+  # Thumbnailer .mkv
+  xdg.dataFile."thumbnailers/ffmpegthumbnailer-mkv.thumbnailer".text = ''
+    [Thumbnailer Entry]
+    TryExec=${pkgs.ffmpegthumbnailer}/bin/ffmpegthumbnailer
+    Exec=${pkgs.ffmpegthumbnailer}/bin/ffmpegthumbnailer -i %i -o %o -s %s -f
+    MimeType=video/x-matroska;video/matroska;video/x-matroska-3d;application/x-matroska;
+  '';
 }

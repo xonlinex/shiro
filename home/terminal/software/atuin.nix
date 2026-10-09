@@ -7,6 +7,31 @@
     flags = [ "--disable-up-arrow" ];
 
     themes = {
+      ember = {
+        theme = {
+          name = "ember";
+          parent = "default";
+        };
+        colors = {
+          AlertInfo = "#80a090";
+          AlertWarn = "#c8b468";
+          AlertError = "#e08060";
+
+          Annotation = "#7890a0";
+          Base = "#d8d0c0";
+          Guidance = "#c8b468";
+          Important = "#e08060";
+          Title = "#b07878";
+          Muted = "#73665b";
+
+          SyntaxCommand = "#7890a0";
+          SyntaxFlag = "#b07878";
+          SyntaxString = "#c8b468";
+          SyntaxVariable = "#e08060";
+          SyntaxOperator = "#80a090";
+          SyntaxComment = "#73665b";
+        };
+      };
       rose-pine = {
         theme.name = "rose-pine";
         colors = {
@@ -50,7 +75,7 @@
 
     settings = {
       style = "full";
-      theme.name = "tokyo-night";
+      theme.name = "ember";
     };
   };
 }

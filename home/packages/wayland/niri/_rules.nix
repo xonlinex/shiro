@@ -44,5 +44,13 @@
         xray = false;
       };
     }
+    # {
+    #   match._props = { namespace = "noctalia-bar-default"; };
+    #   background-effect = {
+    #     blur = true;
+    #     noise = 0.01;
+    #     saturation = 3.0;
+    #   };
+    # }
   ];
 }

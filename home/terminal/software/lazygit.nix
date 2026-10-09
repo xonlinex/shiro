@@ -7,41 +7,43 @@
     settings = {
       gui = {
         nerdFontsVersion = "3";
+
+        # ember theme
         theme = {
           activeBorderColor = [
-            "#ff9e64"
+            "#e08060"
             "bold"
           ];
           inactiveBorderColor = [
-            "#27a1b9"
+            "#73665b"
           ];
           searchingActiveBorderColor = [
-            "#ff9e64"
+            "#c8b468"
             "bold"
           ];
           optionsTextColor = [
-            "#7aa2f7"
+            "#7890a0"
           ];
           selectedLineBgColor = [
-            "#283457"
+            "#3e3c38"
           ];
           cherryPickedCommitFgColor = [
-            "#7aa2f7"
+            "#171311"
           ];
           cherryPickedCommitBgColor = [
-            "#bb9af7"
+            "#b07878"
           ];
           markedBaseCommitFgColor = [
-            "#7aa2f7"
+            "#171311"
           ];
           markedBaseCommitBgColor = [
-            "#e0af68"
+            "#c8b468"
           ];
           unstagedChangesColor = [
-            "#db4b4b"
+            "#e08060"
           ];
           defaultFgColor = [
-            "#c0caf5"
+            "#d8d0c0"
           ];
         };
       };

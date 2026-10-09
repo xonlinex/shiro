@@ -8,6 +8,10 @@
     loupe
     papers
     qbittorrent
+    obs-studio
+    decibels
+    file
+
 
     # utilities
     wl-clipboard

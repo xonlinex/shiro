@@ -23,7 +23,7 @@
 
     # Applications
     "Mod+Return" = {
-      _props = { hotkey-overlay-title = "Ghostty terminal"; };
+      _props = { hotkey-overlay-title = "Open terminal"; };
       spawn = "ghostty";
     };
 

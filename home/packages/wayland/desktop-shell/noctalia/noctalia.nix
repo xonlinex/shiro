@@ -5,9 +5,9 @@ let
   username = "${config.home.username}";
   pfp = "${config.home.homeDirectory}/Pictures/avatar-rounded.png";
   rounding = 20;
-  general-opacity = 1.0;
-  capsule_opacity = 0.1;
-  dock-opacity = 0.8;
+  general-opacity = 0.8;
+  capsule_opacity = 0.05;
+  dock-opacity = 0.6;
   osd-opacity = 0.8;
   status_shadow = false;
 in
@@ -45,21 +45,19 @@ in
           margin_edge = 0;
           margin_ends = 0;
           padding = 10;
-          position = "top";
+          position = "left";
           radius = rounding;
           shadow = status_shadow;
           widget_spacing = 5;
-          start = [ "launcher" "workspaces" "taskbar" "active_window" ];
-          center = [ "clock" ];
+          start = [ "control-center" "workspaces" "taskbar" ];
+          center = [ "clock" "media" ];
           end = [
-            "media"
             "tray"
             "keyboard_layout"
             "privacy"
             "group:g1"
             "volume"
             "notifications"
-            "control-center"
           ];
           capsule_group = [
             {
@@ -94,30 +92,39 @@ in
         enabled = false;
         background_opacity = dock-opacity;
         shadow = status_shadow;
-        cross_axis_padding = 10;
-        icon_size = 40;
+        border_width = 1.0;
+        cross_axis_padding = 5;
+        main_axis_padding = 5;
+        icon_size = 55;
         inactive_opacity = 1.0;
         inactive_scale = 1.0;
-        item_spacing = 5;
-        launcher_position = "end";
-        margin_edge = 10;
+        item_spacing = 0;
+        # launcher_position = "start";
+        margin_edge = 2;
         edge_margin = 5;
         show_dots = true;
         radius = rounding;
         pinned = [
-          "zen-beta"
-          "org.gnome.Nautilus"
-          "com.github.neithern.g4music"
-          "sonora"
-          "mpv"
-          "org.gnome.Totem"
-          "org.gnome.Papers"
-          "org.gnome.Loupe"
-          "com.mitchellh.ghostty"
-          "postman"
-          "dbeaver"
-          "vesktop"
-          "org.qbittorrent.qBittorrent"
+          # "org.gnome.Nautilus"
+          # "org.gnome.Calendar"
+          # "org.gnome.clocks"
+          # "org.gnome.Maps"
+          # "org.gnome.SystemMonitor"
+          # "org.gnome.Decibels"
+          # "org.gnome.Calculator"
+          # "org.gnome.Showtime"
+          # "com.github.neithern.g4music"
+          # "mpv"
+          # "zen-beta"
+          # "code"
+          # "kitty"
+          # "com.mitchellh.ghostty"
+          # "com.obsproject.Studio"
+          # "org.gnome.Loupe"
+          # "brave-browser"
+          # "vesktop"
+          # "Postman"
+          # "DBeaver"
         ];
       };
 
@@ -243,13 +250,15 @@ in
       notification = {
         background_opacity = osd-opacity;
         max_visible = 3;
-        offset_y = 20;
+        offset_y = 10;
+        offset_x = 10;
+        position = "top_right";
       };
 
       osd = {
         background_opacity = osd-opacity;
         offset_x = 0;
-        offset_y = 20;
+        offset_y = 10;
         position = "bottom_center";
       };
 
@@ -287,31 +296,34 @@ in
       };
 
       wallpaper = {
+        directory = "/home/xonlinex/Pictures/Wallpapers";
         transition = [ "disc" "honeycomb" "stripes" ];
         transition_on_startup = true;
       };
 
       widget = {
         active_window = {
-          display = "text_only";
+          # display = "text_only";
           max_length = 300;
+          min_length = 0;
         };
         clock = {
           capsule = true;
-          format = "{:%I:%M %p} │ {:%a, %d %b}";
+          format = "{:%I:%M %p} - {:%a %d %b}";
         };
         control-center = {
           capsule = true;
-          capsule_padding = 4;
+          capsule_padding = 2;
           # capsule_fill = "primary";
           # capsule_radius = 20;
           custom_image = pfp;
-          scale = 1.5;
+          scale = 1.8;
         };
         cpu = {
           display = "text";
           stat = "cpu_usage";
-          visualization = "none";
+          visualization = "graph";
+          show_value = false;
         };
         launcher = {
           capsule = true;
@@ -322,6 +334,9 @@ in
           glyph = "flare-filled";
         };
         media = {
+          art_size = 25;
+          capsule = true;
+          capsule_padding = 5;
           hide_when_no_media = true;
           max_length = 300;
           title_scroll = "always";
@@ -335,22 +350,23 @@ in
         };
         ram = {
           display = "text";
-          visualization = "none";
+          visualization = "graph";
+          show_value = false;
         };
         sysmon = {
-          show_value = true;
+          show_value = false;
           stat = "disk_used";
-          visualization = "none";
+          visualization = "graph";
         };
         taskbar = {
-          inactive_opacity = 0.5;
+          inactive_opacity = 0.7;
           only_active_workspace = true;
-          show_active_indicator = false;
+          show_active_indicator = true;
         };
         workspaces = {
           active_pill_size = 2.5;
           capsule = true;
-          capsule_padding = 10;
+          capsule_padding = 11;
           empty_color = "secondary";
           pill_scale = 0.6;
           show_labels = false;

@@ -30,7 +30,8 @@
       # theme = "Jellybeans";
       # theme = "sora";
       # theme = "luna";
-      theme = "cendre";
+      # theme = "cendre";
+      theme = "dark:ember, light:ember-light";
 
       window-theme = "system";
       window-decoration = "false";

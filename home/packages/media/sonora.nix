@@ -9,9 +9,9 @@
 
       appearance = {
         theme = "system";
-        adaptive_theme = false;
+        adaptive_theme = true;
         rounding = "round";
-        transparent = true;
+        transparent = false;
         transparency = 0.2;
       };
     };
