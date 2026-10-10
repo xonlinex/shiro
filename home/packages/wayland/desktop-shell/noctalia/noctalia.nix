@@ -250,15 +250,15 @@ in
       notification = {
         background_opacity = osd-opacity;
         max_visible = 3;
-        offset_y = 10;
-        offset_x = 10;
+        offset_y = 15;
+        offset_x = 15;
         position = "top_right";
       };
 
       osd = {
         background_opacity = osd-opacity;
         offset_x = 0;
-        offset_y = 10;
+        offset_y = 15;
         position = "bottom_center";
       };
 

@@ -6,11 +6,6 @@
     hide-not-bound = {};
   };
 
-  animations = {
-    on = {};
-    slowdown = 0.8;
-  };
-
   blur = {
     passes = 4;
     offset = 2.0;

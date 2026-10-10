@@ -13,6 +13,12 @@
   # SDDM theme
   programs.qylock = {
     enable = true;
-    theme = "dog-samurai";
+    theme = "clockwork/orbital";
+    themeOptions = {
+      clockwork.orbital = {
+        themeMode = "dark";
+        enableWindup = false;
+      };
+    };
   };
 }

@@ -6,6 +6,7 @@ let
   keybinds = import ./_binds.nix;
   inputs = import ./_input.nix;
   layout = import ./_layout.nix;
+  animations = import ./_animations.nix;
   rules = import ./_rules.nix;
   autostart = import ./_autostart.nix;
   noctalia-settings = import ../desktop-shell/noctalia/_setttings-niri.nix;
@@ -23,6 +24,7 @@ let
     keybinds
     inputs
     layout
+    animations
     rules
     autostart
     noctalia-settings

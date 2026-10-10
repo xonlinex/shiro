@@ -29,7 +29,7 @@
 
     "Mod+E" = {
       _props = { hotkey-overlay-title = "File explorer"; };
-      spawn-sh = "ghostty -e yazi";
+      spawn-sh = "nautilus";
     };
 
     "Mod+Shift+S" = {
@@ -125,15 +125,15 @@
     "Mod+9" = { focus-workspace = 9; };
 
     # Move to workspace numbers
-    "Mod+Ctrl+1" = { move-column-to-workspace = 1; };
-    "Mod+Ctrl+2" = { move-column-to-workspace = 2; };
-    "Mod+Ctrl+3" = { move-column-to-workspace = 3; };
-    "Mod+Ctrl+4" = { move-column-to-workspace = 4; };
-    "Mod+Ctrl+5" = { move-column-to-workspace = 5; };
-    "Mod+Ctrl+6" = { move-column-to-workspace = 6; };
-    "Mod+Ctrl+7" = { move-column-to-workspace = 7; };
-    "Mod+Ctrl+8" = { move-column-to-workspace = 8; };
-    "Mod+Ctrl+9" = { move-column-to-workspace = 9; };
+    "Mod+Shift+1" = { move-column-to-workspace = 1; };
+    "Mod+Shift+2" = { move-column-to-workspace = 2; };
+    "Mod+Shift+3" = { move-column-to-workspace = 3; };
+    "Mod+Shift+4" = { move-column-to-workspace = 4; };
+    "Mod+Shift+5" = { move-column-to-workspace = 5; };
+    "Mod+Shift+6" = { move-column-to-workspace = 6; };
+    "Mod+Shift+7" = { move-column-to-workspace = 7; };
+    "Mod+Shift+8" = { move-column-to-workspace = 8; };
+    "Mod+Shift+9" = { move-column-to-workspace = 9; };
 
     # Column merging
     "Mod+BracketLeft" = { consume-or-expel-window-left = {}; };
