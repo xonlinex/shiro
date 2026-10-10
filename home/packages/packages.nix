@@ -3,15 +3,12 @@
 {
   home.packages = with pkgs; [
     # apps
-    gapless
     nautilus
     loupe
     papers
     qbittorrent
     obs-studio
     decibels
-    file
-
 
     # utilities
     wl-clipboard

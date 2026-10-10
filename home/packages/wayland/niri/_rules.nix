@@ -25,6 +25,10 @@
       default-column-width.fixed = 1200;
     }
 
+    { match._props = { app-id = "org.gnome.NautilusPreviewer"; };
+      open-floating = true;
+    }
+
     {
       geometry-corner-radius = 16;
       clip-to-geometry = true;

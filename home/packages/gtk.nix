@@ -6,9 +6,7 @@
     gsettings-desktop-schemas
     glib
     xdg-user-dirs
-    # adw-gtk3
-    ffmpeg-headless
-    ffmpegthumbnailer
+    adw-gtk3
     unrar
   ];
 

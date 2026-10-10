@@ -8,7 +8,7 @@ let
   general-opacity = 0.8;
   capsule_opacity = 0.05;
   dock-opacity = 0.6;
-  osd-opacity = 0.8;
+  osd-opacity = 0.7;
   status_shadow = false;
 in
 {
@@ -50,7 +50,7 @@ in
           shadow = status_shadow;
           widget_spacing = 5;
           start = [ "control-center" "workspaces" "taskbar" ];
-          center = [ "clock" "media" ];
+          center = [ "clock" "group:g2" ];
           end = [
             "tray"
             "keyboard_layout"
@@ -67,6 +67,15 @@ in
               members = [ "cpu" "ram" "sysmon" ];
               opacity = capsule_opacity;
               padding = 12.0;
+              radius = rounding;
+            }
+            {
+              id = "g2";
+              enabled = true;
+              fill = "primary";
+              members = [ "audio_visualizer" "media" "audio_visualizer" ];
+              opacity = capsule_opacity;
+              padding = 7.0;
               radius = rounding;
             }
           ];
@@ -250,6 +259,7 @@ in
       notification = {
         background_opacity = osd-opacity;
         max_visible = 3;
+        width = 320;
         offset_y = 15;
         offset_x = 15;
         position = "top_right";
@@ -257,9 +267,11 @@ in
 
       osd = {
         background_opacity = osd-opacity;
-        offset_x = 0;
+        offset_x = 15;
         offset_y = 15;
+        orientation = "vertical";
         position = "bottom_center";
+        position_vertical = "center_right";
       };
 
       shell = {
@@ -273,8 +285,11 @@ in
           open_near_click_control_center = true;
           shadow = status_shadow;
           launcher_position = "top_left";
+          session_placement = "floating";
+          session_position = "top_center";
           transparency_mode = "glass";
-          wallpaper_placement = "attached";
+          wallpaper_placement = "floating";
+          wallpaper_position = "bottom_center";
         };
         screen_corners = {
           enabled = true;
@@ -307,6 +322,13 @@ in
           max_length = 300;
           min_length = 0;
         };
+        audio_visualizer = {
+          bands = 3;
+          color_2 = "secondary";
+          interactive = false;
+          mirrored = true;
+          width = 20;
+        };
         clock = {
           capsule = true;
           format = "{:%I:%M %p} - {:%a %d %b}";
@@ -334,12 +356,12 @@ in
           glyph = "flare-filled";
         };
         media = {
-          art_size = 25;
-          capsule = true;
-          capsule_padding = 5;
+          art_size = 20;
+          # capsule = true;
+          # capsule_padding = 0;
           hide_when_no_media = true;
-          max_length = 300;
-          title_scroll = "always";
+          # max_length = 300;
+          # title_scroll = "always";
           actions = {
             scroll_up = "media previous";
             scroll_down = "media next";
