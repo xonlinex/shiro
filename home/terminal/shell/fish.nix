@@ -21,6 +21,7 @@
       hms = "home-manager switch --flake .#${config.home.username}";
       nrs = "sudo nixos-rebuild switch --flake .#nixos";
       dv = "devenv";
+      dvnt = "devenv --no-tui";
       c = "clear";
       p = "python";
       g = "git";

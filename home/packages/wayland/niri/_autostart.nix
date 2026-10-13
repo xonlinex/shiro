@@ -9,5 +9,4 @@
   spawn-at-startup = [
     "noctalia"
   ];
-
 }

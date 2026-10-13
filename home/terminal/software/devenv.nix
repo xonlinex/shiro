@@ -3,7 +3,7 @@
 {
   home.packages = [ pkgs.devenv ];
 
-  home.sessionVariables.DEVENV_TUI = "false";
+  # home.sessionVariables.DEVENV_TUI = "false";
 
   programs.direnv = {
     enable = true;
@@ -23,6 +23,6 @@
     '';
 
   programs.fish.interactiveShellInit = ''
-    devenv hook fish -- --no-tui | source
+    devenv hook fish | source
     '';
 }

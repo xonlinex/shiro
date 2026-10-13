@@ -9,7 +9,6 @@
     tree-sitter
     curl
     wget
-    less
     ripgrep
     fd
     gcc
@@ -21,6 +20,7 @@
     sesh
     # inshellisense
     git
+    jq
   ];
 
   imports = [

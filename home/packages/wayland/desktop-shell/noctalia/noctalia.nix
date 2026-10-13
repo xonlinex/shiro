@@ -141,6 +141,29 @@ in
         colors_changed = "~/.config/noctalia/toggle-theme.sh";
       };
 
+      idle = {
+        behavior_order = [ "lock" "screen-off" "lock-and-suspend" ];
+        pre_action_fade_seconds = 0;
+
+        behavior = {
+          lock = {
+            action = "lock";
+            enabled = true;
+            timeout = 600.0;
+          };
+          screen-off = {
+            # action = "screen_off";
+            enabled = false;
+            # timeout = 660.0;
+          };
+          lock-and-suspend = {
+            action = "lock_and_suspend";
+            enabled = true;
+            timeout = 900.0;
+          };
+        };
+      };
+
       location = {
         auto_locate = true;
       };
