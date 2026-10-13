@@ -12,7 +12,7 @@
       # command_timeout = 500;
 
       format = ''
-        $directory$git_branch$git_status$cmd_duration$nix_shell
+        $directory$git_branch$git_status$nix_shell$cmd_duration
         $character'';
 
       # status = {
@@ -91,7 +91,7 @@
       };
 
       cmd_duration = {
-        format = "[took ](white)[$duration]($style)";
+        format = " [took ](white)[$duration]($style)";
         style = "yellow";
         min_time = 2000;
         show_milliseconds = true;
@@ -99,12 +99,13 @@
 
       nix_shell = {
         disabled = false;
-        heuristic = false;
-        format = " [nix]($style)";
+        symbol = "󱄅";
+        format = "[via ](white)[$symbol nix \\($name\\)]($style)";
         style = "bold blue";
-        impure_msg = "";
-        pure_msg = "";
-        unknown_msg = "";
+        heuristic = false;
+      #   impure_msg = "";
+      #   pure_msg = "";
+      #   unknown_msg = "";
       };
     };
   };

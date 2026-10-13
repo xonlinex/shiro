@@ -57,7 +57,12 @@
   };
 
   # Enable flakes and the new nix command
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings = {
+    experimental-features = [ "nix-command" "flakes" ];
+    # Esto añade los servidores de caché para que Devenv descargue todo precompilado e instantáneo
+    substituters = [ "https://cachix.org" ];
+    trusted-public-keys = [ "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw=" ];
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

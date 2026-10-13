@@ -8,8 +8,12 @@
       pop_to_root_on_close = true;
       keybinding = "emacs";
 
+      keybinds = {
+        "open-search-filter" = "control+F";
+      };
+
       tray = {
-        enabled = false;
+        enabled = true;
       };
 
       theme = {
@@ -22,20 +26,21 @@
           icon_theme = "auto";
         };
       };
+
       font = {
         normal = {
-          family = "SF Pro Dispaly";
-          size = 10;
+          family = "SF Pro Display";
+          size = 11;
         };
       };
 
       launcher_window = {
         rounding = 16;
-        opacity = 0.9;
+        opacity = 0.7;
 
         client_side_decorations = {
           enabled = true;
-          border_width = 2;
+          border_width = 1;
         };
       };
     };

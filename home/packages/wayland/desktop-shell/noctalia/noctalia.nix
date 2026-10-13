@@ -21,7 +21,7 @@ in
 
     settings = {
       audio = {
-        enable_sounds = true;
+        enable_sounds = false; # FIX: audio_visualizer conflict
       };
 
       backdrop = {
@@ -50,7 +50,7 @@ in
           shadow = status_shadow;
           widget_spacing = 5;
           start = [ "control-center" "workspaces" "taskbar" ];
-          center = [ "clock" "group:g2" ];
+          center = [ "group:g2" "clock" "weather" ];
           end = [
             "tray"
             "keyboard_layout"
@@ -143,6 +143,10 @@ in
 
       location = {
         auto_locate = true;
+      };
+
+      lockscreen = {
+        transition = [ "disc" ];
       };
 
       lockscreen_widgets = {
@@ -347,14 +351,14 @@ in
           visualization = "graph";
           show_value = false;
         };
-        launcher = {
-          capsule = true;
-          # capsule_padding = 7;
-          capsule_radius = rounding;
-          scale = 1.0;
-          color = "primary";
-          glyph = "flare-filled";
-        };
+        # launcher = {
+        #   capsule = true;
+        #   # capsule_padding = 7;
+        #   capsule_radius = rounding;
+        #   scale = 1.0;
+        #   color = "primary";
+        #   glyph = "flare-filled";
+        # };
         media = {
           art_size = 20;
           # capsule = true;

@@ -77,7 +77,7 @@
   };
 
   cursor = {
-    xcursor-theme = "Bibata-Modern-Classic";
+    xcursor-theme = "macOS";
     xcursor-size = 24;
     hide-when-typing = {};
     hide-after-inactive-ms = 5000;

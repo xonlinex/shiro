@@ -22,8 +22,8 @@
     postman
     neovim
     # nodejs
-    # openjdk21
-    # python3
+    # jdk21
+    python3
     # maven
     # cargo
     #x11

@@ -20,6 +20,7 @@
     shellAbbrs = {
       hms = "home-manager switch --flake .#${config.home.username}";
       nrs = "sudo nixos-rebuild switch --flake .#nixos";
+      dv = "devenv";
       c = "clear";
       p = "python";
       g = "git";
