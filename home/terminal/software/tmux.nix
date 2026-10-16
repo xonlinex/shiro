@@ -41,11 +41,13 @@ in
       set -g status-right-length 100
       set -g status-style "bg=default,fg=${muted}"
       set -g status-left "#[bg=${main},fg=black]  #[bg=${main},fg=black]#S #[fg=${main},bg=default] "
-      set -g status-right "#{?client_prefix,#[fg=${main},bg=default]#[bg=${main},fg=black,bold] PREFIX ,}#[fg=${muted},bg=#{?client_prefix,${main},default}]#[bg=${muted},fg=black] #(whoami)@#(uname -n) "
+      # set -g status-right "#{?client_prefix,#[fg=${main},bg=green]#[bg=${main},fg=black,bold] PREFIX ,}#[fg=${muted},bg=#{?client_prefix,${main},default}]#[bg=${muted},fg=black] #(whoami)@#(uname -n) "
+      # set -g status-right "#[bg=${muted},fg=black] #(whoami)@#(uname -n) "
+      set -g status-right "#[bg=#{?client_prefix,default,default},fg=#{?client_prefix,${main},${muted}}]#[bg=#{?client_prefix,${main},${muted}},fg=black] #(whoami)@#(uname -n) "
 
       set -g window-status-separator "#[fg=${muted}]  "
       set -g window-status-format "#[fg=${muted}]#W#{?window_end_flag, ,}"
-      set -g window-status-current-format "#[fg=${main},bold]#W#{?window_end_flag, ,}"
+      set -g window-status-current-format "#[fg=#{?window_zoomed_flag,yellow,${main}},bold]#W#{?window_end_flag, ,}"
 
       ### GENERAL ###
       bind r source-file ~/.config/tmux/tmux.conf \; display "Config reloaded!"

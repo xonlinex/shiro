@@ -91,7 +91,7 @@
       };
 
       cmd_duration = {
-        format = " [took ](white)[$duration]($style)";
+        format = "[took ](white)[$duration]($style)";
         style = "yellow";
         min_time = 2000;
         show_milliseconds = true;
@@ -100,7 +100,7 @@
       nix_shell = {
         disabled = false;
         symbol = "󱄅";
-        format = "[via ](white)[$symbol nix \\($name\\)]($style)";
+        format = "[via ](white)[$symbol nix \\($name\\)]($style) ";
         style = "bold blue";
         heuristic = false;
       #   impure_msg = "";

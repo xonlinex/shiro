@@ -60,6 +60,32 @@
       _props = { allow-when-locked = true; };
       spawn-sh = "noctalia msg media previous";
     };
+
+    # Screenshots
+    "Mod+Shift+S" = {
+      _props = { hotkey-overlay-title = "Screenshot Region"; };
+      spawn-sh = "noctalia msg screenshot-region";
+    };
+    "Mod+Ctrl+S" = {
+      _props = { hotkey-overlay-title = "Screenshot Annotate"; };
+      spawn-sh = "noctalia msg annotate";
+    };
+    "Mod+Alt+S" = {
+      _props = { hotkey-overlay-title = "Screenshot FullScreen Monitor Picker"; };
+      spawn-sh = "noctalia msg screenshot-fullscreen pick";
+    };
+
+    # Launcher
+    "Alt+Space" = {
+      _props = { hotkey-overlay-title = "Run an applications"; };
+      spawn-sh = "noctalia msg panel-toggle launcher";
+    };
+
+    # Emojis
+    "Mod+Period" = {
+      _props = { hotkey-overlay-title = "Emojis"; };
+      spawn-sh = "noctalia msg panel-toggle launcher '/emo '";
+    };
   };
 
   layer-rule = [

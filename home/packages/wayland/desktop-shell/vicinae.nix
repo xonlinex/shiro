@@ -13,7 +13,7 @@
       };
 
       tray = {
-        enabled = true;
+        enabled = false;
       };
 
       theme = {

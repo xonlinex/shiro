@@ -1,14 +1,15 @@
 { inputs, config, ... }:
 
 let
+  # WARNING: verify monitor name
   monitor = "HDMI-A-2";
   username = "${config.home.username}";
   pfp = "${config.home.homeDirectory}/Pictures/avatar-rounded.png";
   rounding = 20;
-  general-opacity = 0.8;
+  general-opacity = 0.85;
   capsule_opacity = 0.05;
   dock-opacity = 0.6;
-  osd-opacity = 0.7;
+  osd-opacity = 0.8;
   status_shadow = false;
 in
 {
@@ -50,7 +51,8 @@ in
           shadow = status_shadow;
           widget_spacing = 5;
           start = [ "control-center" "workspaces" "taskbar" ];
-          center = [ "group:g2" "clock" "weather" ];
+          center = [ "clock" "media" ];
+          # center = [ "clock" "group:g2" ];
           end = [
             "tray"
             "keyboard_layout"
@@ -137,9 +139,9 @@ in
         ];
       };
 
-      hooks = {
-        colors_changed = "~/.config/noctalia/toggle-theme.sh";
-      };
+      # hooks = {
+      #   colors_changed = "~/.config/noctalia/toggle-theme.sh";
+      # };
 
       idle = {
         behavior_order = [ "lock" "screen-off" "lock-and-suspend" ];
@@ -162,6 +164,11 @@ in
             timeout = 900.0;
           };
         };
+      };
+
+      keybinds = {
+        down = [ "Down" "Ctrl+n" ];
+        up = [ "Up" "Ctrl+p" ];
       };
 
       location = {
@@ -306,12 +313,18 @@ in
         avatar_path = pfp;
         corner_radius_scale = 1.0;
         font_family = "SF Pro Display";
+
+        launcher = {
+          auto_paste = "off";
+          default_view = "all";
+        };
+
         panel = {
           control_center_placement = "attached";
           control_center_position = "auto";
           open_near_click_control_center = true;
           shadow = status_shadow;
-          launcher_position = "top_left";
+          launcher_position = "center";
           session_placement = "floating";
           session_position = "top_center";
           transparency_mode = "glass";
@@ -321,6 +334,9 @@ in
         screen_corners = {
           enabled = true;
           size = rounding * 2;
+        };
+        screenshot = {
+          directory = "${config.home.username}/Pictures/Screenshots";
         };
         shadow = {
           direction = "center";
@@ -383,10 +399,12 @@ in
         #   glyph = "flare-filled";
         # };
         media = {
-          art_size = 20;
-          # capsule = true;
-          # capsule_padding = 0;
+          # art_size = 30;
+          scale = 1.5;
+          capsule = true;
+          capsule_padding = 4;
           hide_when_no_media = true;
+          rotate_album_art = true;
           # max_length = 300;
           # title_scroll = "always";
           actions = {

@@ -36,11 +36,4 @@
     ];
   };
 
-  # Thumbnailer .mkv
-  xdg.dataFile."thumbnailers/ffmpegthumbnailer-mkv.thumbnailer".text = ''
-    [Thumbnailer Entry]
-    TryExec=${pkgs.ffmpegthumbnailer}/bin/ffmpegthumbnailer
-    Exec=${pkgs.ffmpegthumbnailer}/bin/ffmpegthumbnailer -i %i -o %o -s %s -f
-    MimeType=video/x-matroska;video/matroska;video/x-matroska-3d;application/x-matroska;
-  '';
 }

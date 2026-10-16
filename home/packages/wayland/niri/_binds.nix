@@ -1,15 +1,15 @@
 {
   binds = {
     # Vicinae
-    "Alt+Space" = {
-      _props = { hotkey-overlay-title = "Run an applications"; };
-      spawn-sh = "vicinae toggle";
-    };
+    # "Alt+Space" = {
+    #   _props = { hotkey-overlay-title = "Run an applications"; };
+    #   spawn-sh = "vicinae toggle";
+    # };
 
-    "Mod+Period" = {
-      _props = { hotkey-overlay-title = "Emojis"; };
-      spawn-sh = "vicinae deeplink vicinae://launch/core/search-emojis";
-    };
+    # "Mod+Period" = {
+    #   _props = { hotkey-overlay-title = "Emojis"; };
+    #   spawn-sh = "vicinae deeplink vicinae://launch/core/search-emojis";
+    # };
 
     "Mod+V" = {
       _props = { hotkey-overlay-title = "Clipboard Manager"; };
@@ -32,10 +32,10 @@
       spawn-sh = "nautilus";
     };
 
-    "Mod+Shift+S" = {
-      _props = { hotkey-overlay-title = "Region screenshot"; };
-      screenshot = {};
-    };
+    # "Mod+Shift+S" = {
+    #   _props = { hotkey-overlay-title = "Region screenshot"; };
+    #   screenshot = {};
+    # };
 
     "Mod+P" = {
       _props = { hotkey-overlay-title = "Color Picker"; };

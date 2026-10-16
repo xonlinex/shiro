@@ -30,7 +30,7 @@
     }
 
     {
-      geometry-corner-radius = 16;
+      geometry-corner-radius = 15;
       clip-to-geometry = true;
       tiled-state = true;
       draw-border-with-background = false;

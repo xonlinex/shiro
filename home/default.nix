@@ -1,7 +1,7 @@
 { inputs, pkgs, username, ... }: {
   home.username = username;
   home.homeDirectory = "/home/${username}";
-  home.stateVersion = "26.11";
+  home.stateVersion = "26.05";
 
   imports = [
     (inputs.import-tree ./packages)
@@ -9,6 +9,7 @@
     ./terminal
     ./editors/editorconfig.nix
   ];
+
   home.sessionVariables = {
     EDITOR = "nvim";
     VISUAL = "nvim";
