@@ -75,6 +75,10 @@ in
           --preview-window 'right:55%' \
           --preview 'sesh preview {}' \
       )\""
+      ### LAZYGIT ###
+      set -g popup-style "bg=default"
+      set -g popup-border-style "fg=${main}"
+      bind g display-popup -E -w 90% -h 90% -d "#{pane_current_path}" -T " lazygit " lazygit
 
       ### KEYMAPS ###
       # Split
@@ -101,6 +105,7 @@ in
       set -g pane-border-style fg=${muted}
       set -g pane-border-lines single
       set -g pane-active-border-style fg=${main}
+
     '';
   };
 }

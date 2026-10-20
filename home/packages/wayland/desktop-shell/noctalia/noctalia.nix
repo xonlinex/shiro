@@ -3,8 +3,9 @@
 let
   # WARNING: verify monitor name
   monitor = "HDMI-A-2";
-  username = "${config.home.username}";
-  pfp = "${config.home.homeDirectory}/Pictures/avatar-rounded.png";
+  username = config.home.username;
+  home-user = config.home.homeDirectory;
+  pfp = config.home.homeDirectory + "/Pictures/avatar-rounded.png";
   rounding = 20;
   general-opacity = 0.85;
   capsule_opacity = 0.05;
@@ -336,7 +337,7 @@ in
           size = rounding * 2;
         };
         screenshot = {
-          directory = "${config.home.username}/Pictures/Screenshots";
+          directory = "${home-user}/Pictures/Screenshots";
         };
         shadow = {
           direction = "center";
@@ -354,7 +355,7 @@ in
       };
 
       wallpaper = {
-        directory = "/home/xonlinex/Pictures/Wallpapers";
+        directory = "${home-user}/Pictures/Wallpapers";
         transition = [ "disc" "honeycomb" "stripes" ];
         transition_on_startup = true;
       };

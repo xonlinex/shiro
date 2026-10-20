@@ -23,7 +23,6 @@
     neovim
     # nodejs
     # jdk21
-    python3
     # maven
     # cargo
     #x11

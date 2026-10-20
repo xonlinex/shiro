@@ -21,6 +21,9 @@
     # inshellisense
     git
     jq
+    # lua-language-server
+    # stylua
+    # shfmt
   ];
 
   imports = [
