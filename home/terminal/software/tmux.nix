@@ -3,6 +3,13 @@
 let
   main = "#e08060";
   muted = "#b8ac96";
+
+  floatTerm = pkgs.writeShellScript "tmux-float" ''
+    session="$1"
+    dir="$2"
+    exec tmux display-popup -E -w 80% -h 80% -d "$dir" \
+      "tmux new-session -A -s '$session-float' -c '$dir'"
+  '';
 in
 {
   programs.tmux = {
@@ -58,7 +65,7 @@ in
       set -g allow-passthrough on
 
       ### SESH ###
-      set -g detach-on-destroy off
+      # set -g detach-on-destroy off
 
       # Prefix + T: Selector flotante con FZF
       bind-key "T" run-shell "sesh connect \"$( \
@@ -79,6 +86,11 @@ in
       set -g popup-style "bg=default"
       set -g popup-border-style "fg=${main}"
       bind g display-popup -E -w 90% -h 90% -d "#{pane_current_path}" -T " lazygit " lazygit
+
+      # Terminal floating
+      bind -n M-f if-shell -F '#{m:*-float,#{session_name}}' \
+        'detach-client' \
+        "run-shell '${floatTerm} \"#{session_name}\" \"#{pane_current_path}\"'"
 
       ### KEYMAPS ###
       # Split

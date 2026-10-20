@@ -1,4 +1,8 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
@@ -52,15 +56,23 @@
   users.users.xonlinex = {
     isNormalUser = true;
     description = "xOnlinEx";
-    extraGroups = [ "networkmanager" "wheel" "docker"];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+    ];
     shell = pkgs.fish;
   };
 
   # Enable flakes and the new nix command
   nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
-    # Esto añade los servidores de caché para que Devenv descargue todo precompilado e instantáneo
-    substituters = [ "https://cachix.org" ];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+
+    # This adds cache servers so that Devenv can download everything precompiled and instantly.
+    substituters = [ "https://devenv.cachix.org" ];
     trusted-public-keys = [ "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw=" ];
   };
 
@@ -92,9 +104,9 @@
   # services.openssh.enable = true;
 
   services.pipewire = {
-	  enable = true;
-	  alsa.enable = true;
-	  pulse.enable = true;
+    enable = true;
+    alsa.enable = true;
+    pulse.enable = true;
   };
 
   hardware.bluetooth = {
