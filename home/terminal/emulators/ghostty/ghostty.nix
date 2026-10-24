@@ -33,6 +33,8 @@
       # theme = "cendre";
       theme = "dark:ember, light:ember-light";
 
+      # UI
+      window-save-state = "never";
       window-theme = "system";
       window-decoration = "false";
       scrollbar = "system";

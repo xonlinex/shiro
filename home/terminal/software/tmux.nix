@@ -54,7 +54,7 @@ in
 
       set -g window-status-separator "#[fg=${muted}]  "
       set -g window-status-format "#[fg=${muted}]#W#{?window_end_flag, ,}"
-      set -g window-status-current-format "#[fg=#{?window_zoomed_flag,yellow,${main}},bold]#W#{?window_end_flag, ,}"
+      set -g window-status-current-format "#[fg=#{?window_zoomed_flag,yellow,${main}},bold,nounderscore]#W#{?window_end_flag, ,}"
 
       ### GENERAL ###
       bind r source-file ~/.config/tmux/tmux.conf \; display "Config reloaded!"

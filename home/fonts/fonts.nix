@@ -5,8 +5,8 @@ let
 in
 {
   home.packages = with pkgs; [
-    google-fonts
-    inter
+    # google-fonts
+    # inter
     apple-fonts
 
     # nerdfonts
