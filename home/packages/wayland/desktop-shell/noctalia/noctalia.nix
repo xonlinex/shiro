@@ -6,16 +6,18 @@ let
   username = config.home.username;
   home-user = config.home.homeDirectory;
   pfp = config.home.homeDirectory + "/Pictures/avatar-rounded.png";
-  rounding = 20;
-  general-opacity = 0.85;
-  capsule_opacity = 0.05;
-  dock-opacity = 0.6;
-  osd-opacity = 0.8;
-  status_shadow = false;
+  rounding = 0;
+  general-opacity = 1.0;
+  capsule_opacity = 0.1;
+  dock-opacity = 1.0;
+  osd-opacity = 1.0;
+  status_shadow = true;
 in
 {
   imports = [
     inputs.noctalia.homeModules.default
+    # custom theme
+    ./themes/ember.nix
   ];
 
   programs.noctalia = {
@@ -26,9 +28,9 @@ in
         enable_sounds = false; # FIX: audio_visualizer conflict
       };
 
-      backdrop = {
-        enabled = true;
-      };
+      # backdrop = {
+      #   enabled = true;
+      # };
 
       bar = {
         order = [ "default" ];
@@ -97,7 +99,46 @@ in
       };
 
       desktop_widgets = {
-        enabled = false;
+        enabled = true;
+        schema_version = 2;
+        widget_order = [ "desktop-widget-0000000000000001" "desktop-widget-0000000000000002" ];
+
+        widget = {
+          desktop-widget-0000000000000001 = {
+            box_height = 180.0;
+            box_width = 190.0;
+            cx = 2200.0;
+            cy = 200.0;
+            output = "${monitor}";
+            placement_height = 1440.0;
+            placement_width = 2560.0;
+            type = "clock";
+            settings = {
+              background = false;
+              clock_style = "digital";
+              color = "primary";
+              format = "{:%H}";
+              shadow = true;
+            };
+          };
+
+          desktop-widget-0000000000000002 = {
+            box_height = 180.0;
+            box_width = 190.0;
+            cx = 2325.0;
+            cy = 325.0;
+            output = "${monitor}";
+            placement_height = 1440.0;
+            placement_width = 2560.0;
+            type = "clock";
+            settings = {
+              background = false;
+              color = "primary";
+              format = "{:%M}";
+              shadow = true;
+            };
+          };
+        };
       };
 
       dock = {
@@ -295,15 +336,15 @@ in
         background_opacity = osd-opacity;
         max_visible = 3;
         width = 320;
-        offset_y = 15;
-        offset_x = 15;
+        offset_y = 40;
+        offset_x = 40;
         position = "top_right";
       };
 
       osd = {
         background_opacity = osd-opacity;
-        offset_x = 15;
-        offset_y = 15;
+        offset_x = 40;
+        offset_y = 40;
         orientation = "vertical";
         position = "bottom_center";
         position_vertical = "center_right";
@@ -312,7 +353,7 @@ in
       shell = {
         app_icon_color = "secondary";
         avatar_path = pfp;
-        corner_radius_scale = 1.0;
+        corner_radius_scale = 0.0;
         font_family = "SF Pro Display";
 
         launcher = {
@@ -328,7 +369,7 @@ in
           launcher_position = "center";
           session_placement = "floating";
           session_position = "top_center";
-          transparency_mode = "glass";
+          transparency_mode = "solid"; # glass, solid
           wallpaper_placement = "floating";
           wallpaper_position = "bottom_center";
         };
@@ -346,10 +387,11 @@ in
 
       theme = {
         mode = "dark";
-        source = "wallpaper";
-        wallpaper_scheme = "m3-content";
+        source = "custom"; # custom, wallpaper
+        # wallpaper_scheme = "m3-content";
+        custom_palette = "ember";
         templates = {
-          builtin_ids = [ "gtk3" "gtk4" "niri" ];
+          builtin_ids = [ "gtk3" "gtk4" "umbriel" ];
           community_ids = [ "discord" "vicinae" "zen-browser" "sonora"];
         };
       };
@@ -405,7 +447,7 @@ in
           capsule = true;
           capsule_padding = 4;
           hide_when_no_media = true;
-          rotate_album_art = true;
+          rotate_album_art = false;
           # max_length = 300;
           # title_scroll = "always";
           actions = {

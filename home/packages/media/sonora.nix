@@ -5,14 +5,19 @@
   programs.sonora = {
     enable = true;
     settings = {
+      font = "SF Pro Display";
+      close_to_tray = false;
+      tray_icon = false;
       local_folders = [ "${config.home.homeDirectory}/Music" ];
 
       appearance = {
-        theme = "system";
-        adaptive_theme = true;
-        rounding = "round";
+        theme = "noctalia";
+        adaptive_theme = false;
+        rounding = "square";
+        visualizer_style = "wave";
         transparent = false;
-        transparency = 0.2;
+        font_size = 15.0;
+        transparency = 0.0;
       };
     };
   };

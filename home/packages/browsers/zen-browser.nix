@@ -32,6 +32,7 @@ in
         "zen.view.experimental-no-window-controls" = true;
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         "zen.widget.linux.transparency" = false;
+        "zen.theme.content-element-separation" = 0;
         "signon.rememberSignons" = false;
         "browser.ctrlTab.sortByRecentlyUsed" = true;
 

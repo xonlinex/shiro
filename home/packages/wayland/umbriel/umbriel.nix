@@ -9,7 +9,11 @@
     # Serialized to ~/.config/umbriel/config.toml
     settings = {
       # INCLUDES
-      include = {};
+      include = {
+        optional.files = [
+          "noctalia.toml"
+        ];
+      };
 
       general.mod_key = "Super";
 
@@ -19,31 +23,31 @@
         cyclic_workspaces = false;
       };
 
-      workspace = [
-        {
-          index = 2;
-          # layout.mode = "dwindle";
-          layout.struts = {
-            left = 400;
-            right = 400;
-            top = 100;
-            bottom = 100;
-          };
-        }
-      ];
+      # workspace = [
+      #   {
+      #     index = 2;
+      #     # layout.mode = "dwindle";
+      #     layout.struts = {
+      #       left = 400;
+      #       right = 400;
+      #       top = 100;
+      #       bottom = 100;
+      #     };
+      #   }
+      # ];
 
       appearance = {
         prefer_no_csd = true;
         border_width = 2;
         outer_border_width = 10;
-        corner_radius = 16;
-        drag_opacity = 0.75;
-        opaque_fullscreen = true;
+        corner_radius = 0;
+        # drag_opacity = 0.75;
+        # opaque_fullscreen = true;
 
         blur = {
           enabled = true;
           optimized = true;
-          passes = 4;
+          passes = 3;
           noise = 0.03;
           saturation = 1.0;
         };
@@ -85,7 +89,7 @@
         # "Mod+Space" = "keyboard-layout-next";
 
         # Applications and session
-        "Mod+Return" = { action = "spawn:kitty"; repeat = false; };
+        "Mod+Return" = { action = "spawn:ghostty"; repeat = false; };
         "Mod+Q" = { action = "window-close"; repeat = false; };
         "Mod+Escape" = "session-quit";
 
@@ -107,6 +111,7 @@
 
         # Layouts: floating
         "Mod+T" = { action = "window-toggle-floating"; repeat = false; };
+        "Mod+Shift+C" = "window-center";
 
         # General
         "Mod+Tab" = "workspace-focus-last";
@@ -172,6 +177,7 @@
         action = "overview-open";
       };
 
+      # blue apps global
       window_rule = [
         {
           blur = true;
