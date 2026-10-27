@@ -6,6 +6,7 @@
     import-tree.url = "github:vic/import-tree";
     qylock.url = "github:Darkkal44/qylock";
     sonora.url = "github:sonorahq/sonora";
+    umbriel.url = "github:noctalia-dev/umbriel";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -39,6 +40,7 @@
       zen-browser,
       firefox-addons,
       qylock,
+      umbriel,
       ...
     }@inputs:
     let

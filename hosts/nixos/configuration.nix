@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  inputs,
   ...
 }:
 
@@ -8,6 +9,7 @@
   imports = [
     ./hardware-configuration.nix
     ./displaymanager.nix
+    inputs.umbriel.nixosModules.default
   ];
 
   boot = {
@@ -95,7 +97,8 @@
   #   enableSSHSupport = true;
   # };
 
-  programs.niri.enable = true;
+  # programs.niri.enable = true;
+  programs.umbriel.enable = true;
   programs.fish.enable = true;
   programs.dconf.enable = true;
 

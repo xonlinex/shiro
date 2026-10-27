@@ -44,8 +44,8 @@ in
           capsule_radius = rounding;
           capsule_thickness = 0.7;
           thickness = 50;
-          margin_edge = 0;
-          margin_ends = 0;
+          margin_edge = 20;
+          margin_ends = 20;
           padding = 10;
           position = "left";
           radius = rounding;
@@ -429,7 +429,7 @@ in
         taskbar = {
           inactive_opacity = 0.7;
           only_active_workspace = true;
-          show_active_indicator = true;
+          show_active_indicator = false;
         };
         workspaces = {
           active_pill_size = 2.5;

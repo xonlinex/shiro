@@ -26,5 +26,8 @@
     # maven
     # cargo
     #x11
+    # languajes
+    # jdk25
+    # maven
   ];
 }

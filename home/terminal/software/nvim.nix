@@ -8,16 +8,16 @@
     ### REQUIRED PACKAGES ###
 
     # Lua
-    lua-language-server
-    stylua
-    shfmt
+    # lua-language-server
+    # stylua
+    # shfmt
 
     # Java + Spring Boot
-    python3
+    # python3
 
     # Nix
-    nixd
-    nixfmt
+    # nixd
+    # nixfmt
   ];
 
 }
