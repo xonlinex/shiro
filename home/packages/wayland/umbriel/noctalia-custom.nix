@@ -1,7 +1,6 @@
 { ... }:
 
 {
-  # Se fusiona con programs.umbriel.settings de umbriel.nix
   programs.umbriel.settings = {
     general.autostart = [ "noctalia" ];
 

@@ -6,7 +6,6 @@
   programs.umbriel = {
     enable = true;
 
-    # Serialized to ~/.config/umbriel/config.toml
     settings = {
       # INCLUDES
       include = {
@@ -20,24 +19,24 @@
         show_cheatsheet = false;
       };
 
-      output."HDMI-A-2" = {
-        mode = "2560x1440@144";
-        min_workspaces = 6;
-        cyclic_workspaces = false;
-      };
+      # output."HDMI-A-2" = {
+      #   mode = "2560x1440@144";
+      #   min_workspaces = 6;
+      #   cyclic_workspaces = false;
+      # };
 
-      # workspace = [
-      #   {
-      #     index = 2;
-      #     # layout.mode = "dwindle";
-      #     layout.struts = {
-      #       left = 400;
-      #       right = 400;
-      #       top = 100;
-      #       bottom = 100;
-      #     };
-      #   }
-      # ];
+      workspace = [
+        {
+          index = 2;
+          # layout.mode = "dwindle";
+          layout.struts = {
+            left = 400;
+            right = 400;
+            top = 50;
+            bottom = 50;
+          };
+        }
+      ];
 
       appearance = {
         prefer_no_csd = true;
