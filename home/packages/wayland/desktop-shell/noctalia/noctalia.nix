@@ -106,9 +106,9 @@ in
 
         widget = {
           desktop-widget-0000000000000001 = {
-            box_height = 180.0;
-            box_width = 190.0;
-            cx = 2200.0;
+            box_height = 150.0;
+            box_width = 150.0;
+            cx = 2260.0;
             cy = 200.0;
             output = "${monitor}";
             placement_height = 1440.0;
@@ -124,10 +124,10 @@ in
           };
 
           desktop-widget-0000000000000002 = {
-            box_height = 180.0;
-            box_width = 190.0;
-            cx = 2325.0;
-            cy = 325.0;
+            box_height = 150.0;
+            box_width = 150.0;
+            cx = 2360.0;
+            cy = 300.0;
             output = "${monitor}";
             placement_height = 1440.0;
             placement_width = 2560.0;
@@ -214,12 +214,17 @@ in
         up = [ "Up" "Ctrl+p" ];
       };
 
+      hooks = {
+        wallpaper_changed = "~/.config/noctalia/save-wallpaper-mode.sh";
+        theme_mode_changed = "~/.config/noctalia/wallpaper-sync.sh";
+      };
+
       location = {
         auto_locate = true;
       };
 
       lockscreen = {
-        transition = [ "disc" ];
+        transition = [ "melt" ];
       };
 
       lockscreen_widgets = {
@@ -301,7 +306,7 @@ in
               background = false;
               inner_diameter = 0.7;
               rotation_speed = 0.5;
-              secondary_color = "secondary";
+              secondary_color = "primary";
               sensitivity = 0.5;
               visualization_mode = "wave";
               wave_thickness = 0.3;
