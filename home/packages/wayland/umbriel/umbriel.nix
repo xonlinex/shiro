@@ -42,7 +42,7 @@
       appearance = {
         prefer_no_csd = true;
         border_width = 2;
-        outer_border_width = 10;
+        outer_border_width = 0;
         corner_radius = 0;
         # drag_opacity = 0.75;
         # opaque_fullscreen = true;
@@ -53,6 +53,14 @@
           passes = 3;
           noise = 0.03;
           saturation = 1.0;
+        };
+
+        title_bar = {
+          mode = "forced";
+          height = 30;
+          font = "SF Pro Display";
+          button_position = "right";
+          buttons = ["minimize" "maximize" "close"];
         };
       };
 
@@ -182,10 +190,17 @@
         action = "overview-open";
       };
 
-      # blue apps global
       window_rule = [
         {
+          # blue apps global
           blur = true;
+        }
+        {
+          match = {
+            title = ".*Picture-in-Picture.*";
+          };
+          title_bar = "off";
+          default_floating = true;
         }
       ];
     };
