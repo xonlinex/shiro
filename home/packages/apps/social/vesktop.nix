@@ -4,7 +4,7 @@
     enable = true;
 
     vencord.settings = {
-      enabledThemes = [ "noctalia.theme.css" ];
+      enabledThemes = [ "discord-system24.css" ];
     };
   };
 }
