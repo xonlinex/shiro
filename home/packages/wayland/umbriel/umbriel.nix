@@ -15,7 +15,10 @@
         ];
       };
 
-      general.mod_key = "Super";
+      general = {
+        mod_key = "Super";
+        show_cheatsheet = false;
+      };
 
       output."HDMI-A-2" = {
         mode = "2560x1440@144";
@@ -98,7 +101,7 @@
         "Mod+I" = "workspace-previous";
         "Mod+WheelDown" = "workspace-next";
         "Mod+WheelUp" = "workspace-previous";
-        "Mod+Alt+T" = "layout-toggle-split";
+        "Mod+Shift+O" = "layout-toggle-split";
 
         # Layouts: scrolling
         "Mod+C" = "column-center";
@@ -115,6 +118,8 @@
 
         # General
         "Mod+Tab" = "workspace-focus-last";
+        "Alt+Tab" = "spawn:noctalia msg window-switcher hold";
+        "Alt+Escape" = "spawn:noctalia msg window-switcher current";
 
         # Focus
         "Mod+H" = "window-focus-left";
