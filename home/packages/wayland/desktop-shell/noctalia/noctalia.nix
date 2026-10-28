@@ -24,6 +24,7 @@ in
     enable = true;
 
     settings = {
+
       audio = {
         enable_sounds = false; # FIX: audio_visualizer conflict
       };
@@ -355,6 +356,7 @@ in
         avatar_path = pfp;
         corner_radius_scale = 0.0;
         font_family = "SF Pro Display";
+        show_close_buttons = false;
 
         launcher = {
           auto_paste = "off";
@@ -400,6 +402,10 @@ in
         directory = "${home-user}/Pictures/Wallpapers";
         transition = [ "disc" "honeycomb" "stripes" ];
         transition_on_startup = true;
+      };
+
+      window_switcher = {
+        style = "carousel";
       };
 
       widget = {
