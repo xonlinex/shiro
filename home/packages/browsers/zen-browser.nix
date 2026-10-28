@@ -1,6 +1,5 @@
 { pkgs, inputs, config, ... }:
 
-
 let
   username = "${config.home.username}";
 in
@@ -32,7 +31,7 @@ in
         "zen.view.experimental-no-window-controls" = true;
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         "zen.widget.linux.transparency" = false;
-        "zen.theme.content-element-separation" = 0;
+        "zen.theme.content-element-separation" = 2;
         "signon.rememberSignons" = false;
         "browser.ctrlTab.sortByRecentlyUsed" = true;
 
@@ -45,8 +44,24 @@ in
     };
   };
 
+  # Disable Rounded Corners
   home.file.".config/zen/${username}/chrome/userChrome.css".text = ''
     @import "${config.home.homeDirectory}/.cache/noctalia/zen-browser/zen-userChrome.css";
+
+    *,
+    *::before,
+    *::after {
+      border-radius: 0 !important;
+    }
+
+    :root {
+      --zen-border-radius: 0px !important;
+      --border-radius-small: 0px !important;
+      --border-radius-medium: 0px !important;
+      --border-radius-large: 0px !important;
+      --toolbarbutton-border-radius: 0px !important;
+      --arrowpanel-border-radius: 0px !important;
+    }
   '';
 
   home.file.".config/zen/${username}/chrome/userContent.css".text = ''
