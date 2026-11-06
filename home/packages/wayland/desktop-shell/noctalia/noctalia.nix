@@ -11,7 +11,7 @@ let
   capsule_opacity = 0.1;
   dock-opacity = 1.0;
   osd-opacity = 1.0;
-  status_shadow = true;
+  status_shadow = false;
 in
 {
   imports = [
@@ -54,16 +54,18 @@ in
           radius = rounding;
           shadow = status_shadow;
           widget_spacing = 5;
-          start = [ "control-center" "workspaces" "taskbar" ];
-          center = [ "clock" "media" ];
+          start = [ "launcher" "workspaces" "taskbar" "active_window" ];
+          center = [ "clock" ];
           # center = [ "clock" "group:g2" ];
           end = [
+            "media"
             "tray"
             "keyboard_layout"
             "privacy"
             "group:g1"
             "volume"
             "notifications"
+            "control-center"
           ];
           capsule_group = [
             {
@@ -102,40 +104,65 @@ in
       desktop_widgets = {
         enabled = true;
         schema_version = 2;
-        widget_order = [ "desktop-widget-0000000000000001" "desktop-widget-0000000000000002" ];
+        widget_order = [
+          "desktop-widget-0000000000000001"
+          "desktop-widget-0000000000000002"
+          "desktop-widget-0000000000000003"
+        ];
 
         widget = {
-          desktop-widget-0000000000000001 = {
-            box_height = 150.0;
-            box_width = 150.0;
-            cx = 2260.0;
-            cy = 200.0;
-            output = "${monitor}";
+          "desktop-widget-0000000000000001" = {
+            box_height = 120.0;
+            box_width = 600.0;
+            cx = 1280.0;
+            cy = 500.0;
+            output = "HDMI-A-2";
             placement_height = 1440.0;
             placement_width = 2560.0;
             type = "clock";
+
             settings = {
               background = false;
-              clock_style = "digital";
               color = "primary";
-              format = "{:%H}";
+              font_family = "Major Mono Display";
+              format = "{:%A}";
               shadow = true;
             };
           };
 
-          desktop-widget-0000000000000002 = {
-            box_height = 150.0;
-            box_width = 150.0;
-            cx = 2360.0;
-            cy = 300.0;
-            output = "${monitor}";
+          "desktop-widget-0000000000000002" = {
+            box_height = 70.0;
+            box_width = 200.0;
+            cx = 1280.0;
+            cy = 580.0;
+            output = "HDMI-A-2";
             placement_height = 1440.0;
             placement_width = 2560.0;
             type = "clock";
+
             settings = {
               background = false;
               color = "primary";
-              format = "{:%M}";
+              font_family = "Major Mono Display";
+              format = "{:%d %b %Y}";
+              shadow = true;
+            };
+          };
+
+          "desktop-widget-0000000000000003" = {
+            box_height = 70.0;
+            box_width = 200.0;
+            cx = 1280.0;
+            cy = 420.0;
+            output = "HDMI-A-2";
+            placement_height = 1440.0;
+            placement_width = 2560.0;
+
+            settings = {
+              background = false;
+              color = "primary";
+              font_family = "Major Mono Display";
+              format = "-{:%H:%M}-";
               shadow = true;
             };
           };
@@ -342,16 +369,16 @@ in
         background_opacity = osd-opacity;
         max_visible = 3;
         width = 320;
-        offset_y = 40;
-        offset_x = 40;
+        offset_y = 20;
+        offset_x = 20;
         position = "top_right";
       };
 
       osd = {
         background_opacity = osd-opacity;
-        offset_x = 40;
-        offset_y = 40;
-        orientation = "vertical";
+        offset_x = 20;
+        offset_y = 20;
+        # orientation = "vertical";
         position = "bottom_center";
         position_vertical = "center_right";
       };
@@ -359,9 +386,9 @@ in
       shell = {
         app_icon_color = "secondary";
         avatar_path = pfp;
-        corner_radius_scale = 0.0;
+        # corner_radius_scale = 0.0; # squra border
         font_family = "SF Pro Display";
-        show_close_buttons = false;
+        show_close_buttons = true;
 
         launcher = {
           auto_paste = "off";
@@ -374,9 +401,9 @@ in
           open_near_click_control_center = true;
           shadow = status_shadow;
           launcher_position = "center";
-          session_placement = "floating";
+          session_placement = "attached"; # floating, attached
           session_position = "top_center";
-          transparency_mode = "solid"; # glass, solid
+          transparency_mode = "glass"; # glass, solid
           wallpaper_placement = "floating";
           wallpaper_position = "bottom_center";
         };
@@ -415,7 +442,7 @@ in
 
       widget = {
         active_window = {
-          # display = "text_only";
+          display = "text_only";
           max_length = 300;
           min_length = 0;
         };
@@ -441,25 +468,25 @@ in
         cpu = {
           display = "text";
           stat = "cpu_usage";
-          visualization = "graph";
-          show_value = false;
+          visualization = "none";
+          show_value = true;
         };
-        # launcher = {
-        #   capsule = true;
-        #   # capsule_padding = 7;
-        #   capsule_radius = rounding;
-        #   scale = 1.0;
-        #   color = "primary";
-        #   glyph = "flare-filled";
-        # };
+        launcher = {
+          # capsule = true;
+          # capsule_padding = 7;
+          # capsule_radius = rounding;
+          # scale = 1.0;
+          color = "primary";
+          glyph = "flare-filled";
+        };
         media = {
-          # art_size = 30;
-          scale = 1.5;
-          capsule = true;
-          capsule_padding = 4;
+          art_size = 35;
+          # scale = 1.5;
+          # capsule = true;
+          # capsule_padding = 4;
           hide_when_no_media = true;
-          rotate_album_art = false;
-          # max_length = 300;
+          rotate_album_art = true;
+          max_length = 300;
           # title_scroll = "always";
           actions = {
             scroll_up = "media previous";
@@ -471,13 +498,13 @@ in
         };
         ram = {
           display = "text";
-          visualization = "graph";
-          show_value = false;
+          visualization = "none";
+          show_value = true;
         };
         sysmon = {
-          show_value = false;
+          show_value = true;
           stat = "disk_used";
-          visualization = "graph";
+          visualization = "none";
         };
         taskbar = {
           inactive_opacity = 0.7;
