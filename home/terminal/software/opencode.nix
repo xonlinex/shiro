@@ -5,7 +5,9 @@
     enable = true;
 
     cli = {
-      theme = "system";
+      theme = {
+        name = "system";
+      };
     };
   };
 }
