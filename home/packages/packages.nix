@@ -16,7 +16,7 @@
     wl-clip-persist
     cliphist
     libnotify
-    xwayland-satellite
+    # xwayland-satellite
 
     # Software for Programming
     dbeaver-bin
