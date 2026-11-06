@@ -6,6 +6,7 @@
   programs.umbriel = {
     enable = true;
 
+
     settings = {
       # INCLUDES
       include = {
@@ -15,6 +16,7 @@
       };
 
       general = {
+        autostart = [ "vicinae server" ];
         mod_key = "Super";
         show_cheatsheet = false;
       };
@@ -31,10 +33,17 @@
       #     };
       #   }
       # ];
+      #
+      colors = {
+        border = {
+          focused = "#F7DCDE39";
+          # unfocused = "#A58A8D30";
+        };
+      };
 
       appearance = {
         prefer_no_csd = true;
-        border_width = 2;
+        border_width = 1;
         outer_border_width = 0;
         corner_radius = 16;
         # drag_opacity = 0.75;
@@ -43,7 +52,7 @@
         blur = {
           enabled = true;
           optimized = true;
-          passes = 3;
+          passes = 4;
           noise = 0.03;
           saturation = 1.0;
         };
@@ -73,7 +82,7 @@
         };
 
         cursor = {
-          theme = "macOS";
+          theme = "Bibata-Modern-Classic";
           size = 24;
           follows_focus = false;
           hide_when_typing = true;
@@ -92,11 +101,14 @@
       keybinds = {
         # "Mod+Space" = "keyboard-layout-next";
 
+        # Vicinae
+        "Mod+V" = { action = "spawn:vicinae deeplink vicinae://launch/clipboard/history"; repeat = false; };
+        "Mod+Slash" = { action = "spawn:vicinae deeplink vicinae://launch/files/search"; repeat = false; };
+
         # Applications and session
         "Mod+Return" = { action = "spawn:ghostty"; repeat = false; };
         "Mod+E" = { action = "spawn:nautilus"; repeat = false; };
         "Mod+Q" = { action = "window-close"; repeat = false; };
-        "Mod+Escape" = "session-quit";
 
         # Layouts: dwindle
         "Mod+U" = "workspace-next";
@@ -115,8 +127,11 @@
         "Mod+W" = { action = "column-toggle-tabbed"; repeat = false; };
 
         # Layouts: floating
-        "Mod+T" = { action = "window-toggle-floating"; repeat = false; };
+        "Mod+S" = { action = "window-toggle-floating"; repeat = false; };
         "Mod+Shift+C" = "window-center";
+
+        # Scratchpad
+        # "Mod+S" = "scratchpad-toggle";
 
         # General
         "Mod+Tab" = "workspace-focus-last";
@@ -134,6 +149,12 @@
         "Mod+Shift+J" = "window-move-down";
         "Mod+Shift+K" = "window-move-up";
         "Mod+Shift+L" = "column-move-right";
+
+        # Resize window
+        "Mod+Minus" = "window-modify-primary-extent:-0.05";
+        "Mod+Equal" = "window-modify-primary-extent:0.05";
+        "Mod+Shift+Minus" = "window-modify-secondary-extent:-0.05";
+        "Mod+Shift+Equal" = "window-modify-secondary-extent:0.05";
 
         # Pinned window
         "Mod+P" = { action = "window-toggle-pinned"; repeat = false; };
@@ -166,9 +187,9 @@
 
       # LAYOUT
       layout = {
-        mode = "dwindle"; # "scrolling", "dwindle", "master" or "floating"
+        mode = "scrolling"; # "scrolling", "dwindle", "master" or "floating"
         extent_presets = [ 0.333 0.5 0.667 ];
-        gap = 20;
+        gap = 5;
         # client_maximize = "column";
 
         scrolling = {
@@ -200,6 +221,15 @@
           match.app_id = "org.gnome.NautilusPreviewer";
           default_floating = true;
           default_floating_size_px = { width = 1500; height = 1000; };
+        }
+      ];
+      layer_rule = [
+        {
+          match.namespace = "^vicinae";
+          blur = true;
+          blur_popups = true;
+          blur_ignore_alpha = 0.0;
+          blur_optimized = false;
         }
       ];
     };
