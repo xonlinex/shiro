@@ -13,7 +13,7 @@
       appearance = {
         theme = "noctalia";
         adaptive_theme = false;
-        rounding = "square";
+        rounding = "round"; # square, round
         visualizer_style = "wave";
         transparent = false;
         font_size = 15.0;
