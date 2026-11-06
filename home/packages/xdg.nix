@@ -1,6 +1,20 @@
-{ config, pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
+  xdg.portal = {
+    enable = true;
+
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gnome
+    ];
+
+    config.common = {
+      default = [ "gnome" ];
+      "org.freedesktop.impl.portal.ScreenCast" = [ "umbriel" ];
+      "org.freedesktop.impl.portal.Screenshot" = [ "umbriel" ];
+    };
+  };
+
   xdg.mimeApps = {
     enable = true;
 

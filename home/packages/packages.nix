@@ -9,6 +9,7 @@
     qbittorrent
     obs-studio
     decibels
+    # kdePackages.qt6ct
 
     # utilities
     wl-clipboard

@@ -19,30 +19,24 @@
         show_cheatsheet = false;
       };
 
-      # output."HDMI-A-2" = {
-      #   mode = "2560x1440@144";
-      #   min_workspaces = 6;
-      #   cyclic_workspaces = false;
-      # };
-
-      workspace = [
-        {
-          index = 2;
-          # layout.mode = "dwindle";
-          layout.struts = {
-            left = 400;
-            right = 400;
-            top = 50;
-            bottom = 50;
-          };
-        }
-      ];
+      # workspace = [
+      #   {
+      #     index = 2;
+      #     # layout.mode = "dwindle";
+      #     layout.struts = {
+      #       left = 400;
+      #       right = 400;
+      #       top = 60;
+      #       bottom = 60;
+      #     };
+      #   }
+      # ];
 
       appearance = {
         prefer_no_csd = true;
         border_width = 2;
         outer_border_width = 0;
-        corner_radius = 0;
+        corner_radius = 16;
         # drag_opacity = 0.75;
         # opaque_fullscreen = true;
 
@@ -54,13 +48,13 @@
           saturation = 1.0;
         };
 
-        title_bar = {
-          mode = "forced";
-          height = 30;
-          font = "SF Pro Display";
-          button_position = "right";
-          buttons = ["minimize" "maximize" "close"];
-        };
+        # title_bar = {
+        #   mode = "forced";
+        #   height = 30;
+        #   font = "SF Pro Display";
+        #   button_position = "right";
+        #   buttons = ["minimize" "maximize" "close"];
+        # };
       };
 
       # INPUT
@@ -100,6 +94,7 @@
 
         # Applications and session
         "Mod+Return" = { action = "spawn:ghostty"; repeat = false; };
+        "Mod+E" = { action = "spawn:nautilus"; repeat = false; };
         "Mod+Q" = { action = "window-close"; repeat = false; };
         "Mod+Escape" = "session-quit";
 
@@ -200,6 +195,11 @@
           };
           title_bar = "off";
           default_floating = true;
+        }
+        {
+          match.app_id = "org.gnome.NautilusPreviewer";
+          default_floating = true;
+          default_floating_size_px = { width = 1500; height = 1000; };
         }
       ];
     };

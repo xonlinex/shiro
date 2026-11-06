@@ -41,6 +41,9 @@ in
     ];
 
     extraConfig = ''
+      ### SELECTION
+      set -g mode-style "bg=${muted},fg=black"
+
       ### STATUS BAR ###
       set -g status-position top
       set -g status-justify "left"

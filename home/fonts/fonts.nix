@@ -5,9 +5,12 @@ let
 in
 {
   home.packages = with pkgs; [
-    # google-fonts
-    # inter
     apple-fonts
+    # orbitron
+    # rajdhani
+    # audiowide
+    # syne
+    major-mono-display
 
     # nerdfonts
     nerd-fonts.symbols-only

@@ -16,8 +16,8 @@
     # python3
 
     # Nix
-    # nixd
-    # nixfmt
+    nixd
+    nixfmt
   ];
 
 }

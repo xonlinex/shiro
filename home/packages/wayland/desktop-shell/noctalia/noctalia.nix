@@ -6,7 +6,7 @@ let
   username = config.home.username;
   home-user = config.home.homeDirectory;
   pfp = config.home.homeDirectory + "/Pictures/avatar-rounded.png";
-  rounding = 0;
+  rounding = 20;
   general-opacity = 1.0;
   capsule_opacity = 0.1;
   dock-opacity = 1.0;
@@ -47,10 +47,10 @@ in
           capsule_radius = rounding;
           capsule_thickness = 0.7;
           thickness = 50;
-          margin_edge = 20;
-          margin_ends = 20;
+          margin_edge = 0;
+          margin_ends = 0;
           padding = 10;
-          position = "left";
+          position = "top";
           radius = rounding;
           shadow = status_shadow;
           widget_spacing = 5;
@@ -394,9 +394,9 @@ in
 
       theme = {
         mode = "dark";
-        source = "custom"; # custom, wallpaper
-        # wallpaper_scheme = "m3-content";
-        custom_palette = "ember";
+        source = "wallpaper"; # custom, wallpaper
+        wallpaper_scheme = "m3-content";
+        # custom_palette = "ember";
         templates = {
           builtin_ids = [ "gtk3" "gtk4" "umbriel" ];
           community_ids = [ "discord" "vicinae" "zen-browser" "sonora"];
