@@ -6,7 +6,6 @@
   programs.umbriel = {
     enable = true;
 
-
     settings = {
       # INCLUDES
       include = {
@@ -21,56 +20,44 @@
         show_cheatsheet = false;
       };
 
-      # workspace = [
-      #   {
-      #     index = 2;
-      #     # layout.mode = "dwindle";
-      #     layout.struts = {
-      #       left = 400;
-      #       right = 400;
-      #       top = 60;
-      #       bottom = 60;
-      #     };
-      #   }
-      # ];
-      #
       colors = {
         border = {
-          focused = "#F7DCDE39";
+          # focused = "#F7DCDE39";
           # unfocused = "#A58A8D30";
         };
       };
 
       appearance = {
         prefer_no_csd = true;
-        border_width = 1;
+        border_width = 2;
         outer_border_width = 0;
-        corner_radius = 16;
-        # drag_opacity = 0.75;
-        # opaque_fullscreen = true;
+        corner_radius = 10;
 
         blur = {
           enabled = true;
-          optimized = true;
+          optimized = false;
           passes = 4;
-          noise = 0.03;
+          noise = 0.04;
           saturation = 1.0;
         };
+        shadow = {
+          enabled = false;
+          softness = 30;
+          offset_x = 0;
+          offset_y = 0;
+        };
+      };
 
-        # title_bar = {
-        #   mode = "forced";
-        #   height = 30;
-        #   font = "SF Pro Display";
-        #   button_position = "right";
-        #   buttons = ["minimize" "maximize" "close"];
-        # };
+      overview = {
+        background_blur = true;
+        zoom = 0.60;
       };
 
       # INPUT
       input = {
         keyboard = {
           layout = "us,es";
-          options = "grp:win_space_toggle";
+          options = "grp:win_space_toggle"; # super+space
           numlock_toggle = true;
           repeat_rate = 30;
           repeat_delay = 200;
@@ -82,7 +69,7 @@
         };
 
         cursor = {
-          theme = "Bibata-Modern-Classic";
+          theme = "macOS";
           size = 24;
           follows_focus = false;
           hide_when_typing = true;
@@ -99,16 +86,29 @@
 
       # KEYBINDS
       keybinds = {
-        # "Mod+Space" = "keyboard-layout-next";
-
         # Vicinae
-        "Mod+V" = { action = "spawn:vicinae deeplink vicinae://launch/clipboard/history"; repeat = false; };
-        "Mod+Slash" = { action = "spawn:vicinae deeplink vicinae://launch/files/search"; repeat = false; };
+        "Mod+V" = {
+          action = "spawn vicinae deeplink vicinae://launch/clipboard/history";
+          repeat = false;
+        };
+        "Mod+Slash" = {
+          action = "spawn vicinae deeplink vicinae://launch/files/search";
+          repeat = false;
+        };
 
         # Applications and session
-        "Mod+Return" = { action = "spawn:ghostty"; repeat = false; };
-        "Mod+E" = { action = "spawn:nautilus"; repeat = false; };
-        "Mod+Q" = { action = "window-close"; repeat = false; };
+        "Mod+Return" = {
+          action = "spawn ghostty";
+          repeat = false;
+        };
+        "Mod+E" = {
+          action = "spawn luciole";
+          repeat = false;
+        };
+        "Mod+Q" = {
+          action = "window-close";
+          repeat = false;
+        };
 
         # Layouts: dwindle
         "Mod+U" = "workspace-next";
@@ -123,20 +123,26 @@
         "Mod+Shift+WheelDown" = "window-focus-right";
         "Mod+R" = "window-cycle-primary-extent";
         "Mod+Shift+R" = "window-cycle-primary-extent-back";
-        "Mod+M" = { action = "window-toggle-maximize"; repeat = false; };
-        "Mod+W" = { action = "column-toggle-tabbed"; repeat = false; };
+        "Mod+M" = {
+          action = "window-toggle-maximize";
+          repeat = false;
+        };
+        "Mod+W" = {
+          action = "column-toggle-tabbed";
+          repeat = false;
+        };
 
         # Layouts: floating
-        "Mod+S" = { action = "window-toggle-floating"; repeat = false; };
+        "Mod+S" = {
+          action = "window-toggle-floating";
+          repeat = false;
+        };
         "Mod+Shift+C" = "window-center";
-
-        # Scratchpad
-        # "Mod+S" = "scratchpad-toggle";
 
         # General
         "Mod+Tab" = "workspace-focus-last";
-        "Alt+Tab" = "spawn:noctalia msg window-switcher hold";
-        "Alt+Escape" = "spawn:noctalia msg window-switcher current";
+        "Alt+Tab" = "spawn noctalia msg window-switcher hold";
+        "Alt+Escape" = "spawn noctalia msg window-switcher current";
 
         # Focus
         "Mod+H" = "window-focus-left";
@@ -151,50 +157,65 @@
         "Mod+Shift+L" = "column-move-right";
 
         # Resize window
-        "Mod+Minus" = "window-modify-primary-extent:-0.05";
-        "Mod+Equal" = "window-modify-primary-extent:0.05";
-        "Mod+Shift+Minus" = "window-modify-secondary-extent:-0.05";
-        "Mod+Shift+Equal" = "window-modify-secondary-extent:0.05";
+        "Mod+Minus" = "window-modify-primary-extent -0.05";
+        "Mod+Equal" = "window-modify-primary-extent 0.05";
+        "Mod+Shift+Minus" = "window-modify-secondary-extent -0.05";
+        "Mod+Shift+Equal" = "window-modify-secondary-extent 0.05";
 
         # Pinned window
-        "Mod+P" = { action = "window-toggle-pinned"; repeat = false; };
+        "Mod+P" = {
+          action = "window-toggle-pinned";
+          repeat = false;
+        };
 
         # Fullscreen
-        "Mod+F" = { action = "window-toggle-maximize-to-edges"; repeat = false; };
-        "Mod+Shift+F" = { action = "window-toggle-fullscreen"; repeat = false; };
-        "Mod+O" = { action = "overview-toggle"; repeat = false; };
+        "Mod+F" = {
+          action = "window-toggle-maximize-to-edges";
+          repeat = false;
+        };
+        "Mod+Shift+F" = {
+          action = "window-toggle-fullscreen";
+          repeat = false;
+        };
+        "Mod+O" = {
+          action = "overview-toggle";
+          repeat = false;
+        };
 
         # Workspaces
-        "Mod+1" = "workspace-switch:1";
-        "Mod+2" = "workspace-switch:2";
-        "Mod+3" = "workspace-switch:3";
-        "Mod+4" = "workspace-switch:4";
-        "Mod+5" = "workspace-switch:5";
-        "Mod+6" = "workspace-switch:6";
-        "Mod+7" = "workspace-switch:7";
-        "Mod+8" = "workspace-switch:8";
-        "Mod+9" = "workspace-switch:9";
-        "Mod+Shift+1" = "window-move-to-workspace:1";
-        "Mod+Shift+2" = "window-move-to-workspace:2";
-        "Mod+Shift+3" = "window-move-to-workspace:3";
-        "Mod+Shift+4" = "window-move-to-workspace:4";
-        "Mod+Shift+5" = "window-move-to-workspace:5";
-        "Mod+Shift+6" = "window-move-to-workspace:6";
-        "Mod+Shift+7" = "window-move-to-workspace:7";
-        "Mod+Shift+8" = "window-move-to-workspace:8";
-        "Mod+Shift+9" = "window-move-to-workspace:9";
+        "Mod+1" = "workspace-switch 1";
+        "Mod+2" = "workspace-switch 2";
+        "Mod+3" = "workspace-switch 3";
+        "Mod+4" = "workspace-switch 4";
+        "Mod+5" = "workspace-switch 5";
+        "Mod+6" = "workspace-switch 6";
+        "Mod+7" = "workspace-switch 7";
+        "Mod+8" = "workspace-switch 8";
+        "Mod+9" = "workspace-switch 9";
+
+        "Mod+Shift+1" = "window-move-to-workspace 1";
+        "Mod+Shift+2" = "window-move-to-workspace 2";
+        "Mod+Shift+3" = "window-move-to-workspace 3";
+        "Mod+Shift+4" = "window-move-to-workspace 4";
+        "Mod+Shift+5" = "window-move-to-workspace 5";
+        "Mod+Shift+6" = "window-move-to-workspace 6";
+        "Mod+Shift+7" = "window-move-to-workspace 7";
+        "Mod+Shift+8" = "window-move-to-workspace 8";
+        "Mod+Shift+9" = "window-move-to-workspace 9";
       };
 
       # LAYOUT
       layout = {
-        mode = "scrolling"; # "scrolling", "dwindle", "master" or "floating"
-        extent_presets = [ 0.333 0.5 0.667 ];
-        gap = 5;
-        # client_maximize = "column";
+        mode = "scrolling"; # "scrolling", "dwindle", "master", or "stacking"
+        extent_presets = [
+          0.333
+          0.5
+          0.667
+        ];
+        gap = 10;
 
         scrolling = {
           default_extent_fraction = 0.5;
-          # center_on_overview_select = true;
         };
       };
 
@@ -207,7 +228,6 @@
 
       window_rule = [
         {
-          # blue apps global
           blur = true;
         }
         {
@@ -218,18 +238,22 @@
           default_floating = true;
         }
         {
-          match.app_id = "org.gnome.NautilusPreviewer";
+          match.app_id = "dev.noctalia.UmbrielSharePicker";
           default_floating = true;
-          default_floating_size_px = { width = 1500; height = 1000; };
+          # default_floating_size_px = {
+          #   width = 1000;
+          #   height = 700;
+          # };
         }
       ];
+
       layer_rule = [
         {
           match.namespace = "^vicinae";
           blur = true;
-          blur_popups = true;
-          blur_ignore_alpha = 0.0;
-          blur_optimized = false;
+          # blur_popups = true;
+          blur_ignore_alpha = 0.1;
+          # blur_optimized = false;
         }
       ];
     };
