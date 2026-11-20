@@ -81,7 +81,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    brightnessctl
   ];
 
   # environment.variables = {
@@ -105,7 +104,15 @@
   virtualisation.docker.enable = true;
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    openFirewall = true;
+    settings = {
+      PasswordAuthentication = true;
+      KbdInteractiveAuthentication = true; # Permite la autenticación interactiva por contraseña
+      PermitRootLogin = "no";
+    };
+  };
 
   services.pipewire = {
     enable = true;
