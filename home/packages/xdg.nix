@@ -1,17 +1,19 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 {
   xdg.portal = {
     enable = true;
 
     extraPortals = [
-      pkgs.xdg-desktop-portal-gnome
+      pkgs.xdg-desktop-portal-gtk
     ];
 
     config.common = {
-      default = [ "gnome" ];
-      "org.freedesktop.impl.portal.ScreenCast" = [ "umbriel" ];
-      "org.freedesktop.impl.portal.Screenshot" = [ "umbriel" ];
+      default = [
+        "umbriel"
+        "gtk"
+      ];
+      "org.freedesktop.impl.portal.FileChooser" = [ "luciole" ];
     };
   };
 
