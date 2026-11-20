@@ -7,6 +7,9 @@
     qylock.url = "github:Darkkal44/qylock";
     sonora.url = "github:sonorahq/sonora";
     umbriel.url = "github:noctalia-dev/umbriel";
+    lazyvim.url = "github:pfassina/lazyvim-nix/v16.0.0";
+    # nautilus-my-computer.url = "github:yannmasoch/nautilus-my-computer?dir=packaging/nix";
+    luciole.url = "github:noctalia-dev/luciole";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -37,6 +40,7 @@
       firefox-addons,
       qylock,
       umbriel,
+      lazyvim,
       ...
     }@inputs:
     let
