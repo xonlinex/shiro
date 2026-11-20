@@ -15,9 +15,9 @@
         adaptive_theme = false;
         rounding = "round"; # square, round
         visualizer_style = "wave";
-        transparent = false;
+        transparent = true;
         font_size = 15.0;
-        transparency = 0.0;
+        transparency = 0.1;
       };
     };
   };

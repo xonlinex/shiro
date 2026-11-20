@@ -1,4 +1,9 @@
-{ pkgs, inputs, config, ... }:
+{
+  pkgs,
+  inputs,
+  config,
+  ...
+}:
 
 let
   username = "${config.home.username}";
@@ -30,7 +35,7 @@ in
         "intl.accept_languages" = "en-US,en,es-ES,es";
         "zen.view.experimental-no-window-controls" = true;
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
-        "zen.widget.linux.transparency" = false;
+        "zen.widget.linux.transparency" = true;
         "zen.theme.content-element-separation" = 8;
         "signon.rememberSignons" = false;
         "browser.ctrlTab.sortByRecentlyUsed" = true;
@@ -44,6 +49,17 @@ in
     };
   };
 
+  # Rounded Corners
+  home.file.".config/zen/${username}/chrome/userChrome.css".text = ''
+    :root {
+      --zen-border-radius: 10px !important;
+    }
+
+    #browser, #appcontent {
+      border-radius: 10px !important;
+      overflow: hidden !important;
+    }
+  '';
   # Disable Rounded Corners
   # home.file.".config/zen/${username}/chrome/userChrome.css".text = ''
   #   @import "${config.home.homeDirectory}/.cache/noctalia/zen-browser/zen-userChrome.css";
