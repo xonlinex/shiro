@@ -1,15 +1,31 @@
 { pkgs, ... }:
 
 let
-  main = "#e08060";
-  muted = "#b8ac96";
+  # Ember theme
+  # main = "#e08060";
+  # muted = "#8a857b";
+  # TokyoNihgt
+  # main = "#bb9af7";
+  # muted = "#414868";
+  # Evergarden
+  # main = "green";
+  # muted = "8";
+  # TokyoNihgt
+  main = "#bb9af7";
+  muted = "#414868";
 
   floatTerm = pkgs.writeShellScript "tmux-float" ''
     session="$1"
     dir="$2"
-    exec tmux display-popup -E -w 80% -h 80% -d "$dir" \
-      "tmux new-session -A -s '$session-float' -c '$dir'"
+    exec tmux display-popup -E -b rounded -w 80% -h 80% -d "$dir" \
+    "tmux new-session -A -s '$session-float' -c '$dir'"
   '';
+  # floatTerm = pkgs.writeShellScript "tmux-float" ''
+  #   session="$1"
+  #   dir="$2"
+  #   exec tmux display-popup -E -w 80% -h 80% -d "$dir" \
+  #     "tmux new-session -A -s '$session-float' -c '$dir'"
+  # '';
 in
 {
   programs.tmux = {
@@ -51,9 +67,7 @@ in
       set -g status-right-length 100
       set -g status-style "bg=default,fg=${muted}"
       set -g status-left "#[bg=${main},fg=black]  #[bg=${main},fg=black]#S #[fg=${main},bg=default] "
-      # set -g status-right "#{?client_prefix,#[fg=${main},bg=green]#[bg=${main},fg=black,bold] PREFIX ,}#[fg=${muted},bg=#{?client_prefix,${main},default}]#[bg=${muted},fg=black] #(whoami)@#(uname -n) "
-      # set -g status-right "#[bg=${muted},fg=black] #(whoami)@#(uname -n) "
-      set -g status-right "#[bg=#{?client_prefix,default,default},fg=#{?client_prefix,${main},${muted}}]#[bg=#{?client_prefix,${main},${muted}},fg=black] #(whoami)@#(uname -n) "
+      set -g status-right "#[bg=#{?client_prefix,default,default},fg=#{?client_prefix,${main},blue}]#[bg=#{?client_prefix,${main},blue},fg=black] #(whoami)@#(uname -n) "
 
       set -g window-status-separator "#[fg=${muted}]  "
       set -g window-status-format "#[fg=${muted}]#W#{?window_end_flag, ,}"
@@ -88,7 +102,9 @@ in
       ### LAZYGIT ###
       set -g popup-style "bg=default"
       set -g popup-border-style "fg=${main}"
-      bind g display-popup -E -w 90% -h 90% -d "#{pane_current_path}" -T " lazygit " lazygit
+      bind g display-popup -E -b rounded -w 90% -h 90% -d "#{pane_current_path}" -T " lazygit " lazygit
+      # bind g display-popup -E -w 90% -h 90% -d "#{pane_current_path}" -T " lazygit " lazygit
+
 
       # Terminal floating
       bind -n M-f if-shell -F '#{m:*-float,#{session_name}}' \

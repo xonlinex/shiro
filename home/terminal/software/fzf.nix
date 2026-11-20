@@ -5,10 +5,9 @@
     enable = true;
     enableFishIntegration = true;
 
-    # Disable the fzf Ctrl+R shortcut to avoid a conflict with Atuin.
+    # Desactiva el historial (Ctrl+R) para evitar conflicto con Atuin
     historyWidget.command = "";
 
-    # Ember colors
     defaultOptions = [
       "--height=~40%"
       "--highlight-line"
@@ -16,23 +15,24 @@
       "--ansi"
       "--layout=reverse"
       "--border=rounded"
-      "--color=bg+:#3e3c38"
-      "--color=bg:-1"
-      "--color=border:#73665b"
-      "--color=fg:#d8d0c0"
-      "--color=fg+:#d8d0c0"
-      "--color=gutter:#171311"
-      "--color=header:#c8b468"
-      "--color=hl+:#e08060"
-      "--color=hl:#e08060"
-      "--color=info:#73665b"
-      "--color=marker:#e08060"
-      "--color=pointer:#e08060"
-      "--color=prompt:#e08060"
-      "--color=query:#d8d0c0:regular"
-      "--color=scrollbar:#73665b"
-      "--color=separator:#73665b"
-      "--color=spinner:#8a9868"
+      "--color=16" # Fuerza a fzf a usar la paleta de 16 colores de tu terminal
     ];
+
+    # Mapeo opcional a los índices ANSI de tu terminal (0-15) para un estilo moderno
+    colors = {
+      bg = "-1"; # Transparente (usa el fondo de tu terminal)
+      "bg+" = "0"; # Negro brillante / Selección sutil (color 0 o 8 según tu tema)
+      fg = "-1"; # Texto normal de tu terminal
+      "fg+" = "15"; # Blanco brillante para la línea seleccionada
+      hl = "4"; # Azul (coincidencias)
+      "hl+" = "12"; # Azul brillante (coincidencia en línea activa)
+      info = "3"; # Amarillo (contador de resultados)
+      prompt = "5"; # Magenta (símbolo >)
+      pointer = "1"; # Rojo (indicador de línea)
+      marker = "2"; # Verde (elementos marcados con Tab)
+      spinner = "6"; # Cian
+      header = "6"; # Cian
+      border = "8"; # Gris / Negro brillante para el borde redondeado
+    };
   };
 }
