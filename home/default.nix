@@ -1,11 +1,15 @@
-{ inputs, pkgs, username, ... }: {
+{
+  inputs,
+  username,
+  ...
+}:
+{
   home.username = username;
   home.homeDirectory = "/home/${username}";
   home.stateVersion = "26.05";
 
   imports = [
     (inputs.import-tree ./packages)
-    (inputs.import-tree ./fonts)
     ./terminal
     ./editors/editorconfig.nix
   ];
@@ -16,7 +20,6 @@
 
     # DISPLAY = ":1";
     # _JAVA_AWT_WM_NONREPARENTING = "1";
-    # XDG_CURRENT_DESKTOP = "niri";
     QT_QPA_PLATFORM = "wayland";
     QT_QPA_PLATFORMTHEME = "gtk";
     QT_QPA_PLATFORMTHEME_QT6 = "gtk";
