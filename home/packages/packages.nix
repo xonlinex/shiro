@@ -21,7 +21,9 @@
     # Software for Programming
     dbeaver-bin
     postman
-    neovim
+    hyprpicker
+    slurp
+    grim
     # nodejs
     # jdk21
     # maven
