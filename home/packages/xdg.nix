@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
 {
+  home.packages = [ pkgs.decibels ];
+
   xdg.portal = {
     enable = true;
 
@@ -48,6 +50,24 @@
       "video/ogg" = [ "mpv.desktop" ];
       "video/3gpp" = [ "mpv.desktop" ];
       "video/x-flv" = [ "mpv.desktop" ];
+
+      # Audio (Decibels)
+      "audio/mpeg" = [ "org.gnome.Decibels.desktop" ];
+      "audio/x-mp3" = [ "org.gnome.Decibels.desktop" ];
+      "audio/flac" = [ "org.gnome.Decibels.desktop" ];
+      "audio/x-flac" = [ "org.gnome.Decibels.desktop" ];
+      "audio/ogg" = [ "org.gnome.Decibels.desktop" ];
+      "audio/x-vorbis+ogg" = [ "org.gnome.Decibels.desktop" ];
+      "audio/opus" = [ "org.gnome.Decibels.desktop" ];
+      "audio/x-opus+ogg" = [ "org.gnome.Decibels.desktop" ];
+      "audio/mp4" = [ "org.gnome.Decibels.desktop" ];
+      "audio/x-m4a" = [ "org.gnome.Decibels.desktop" ];
+      "audio/aac" = [ "org.gnome.Decibels.desktop" ];
+      "audio/wav" = [ "org.gnome.Decibels.desktop" ];
+      "audio/x-wav" = [ "org.gnome.Decibels.desktop" ];
+      "audio/x-ms-wma" = [ "org.gnome.Decibels.desktop" ];
+      "audio/webm" = [ "org.gnome.Decibels.desktop" ];
+      "audio/x-aiff" = [ "org.gnome.Decibels.desktop" ];
 
       # Documents (Evince)
       "application/pdf" = [ "org.gnome.Evince.desktop" ];

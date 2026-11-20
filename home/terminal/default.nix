@@ -1,6 +1,5 @@
 {
   pkgs,
-  config,
   inputs,
   ...
 }:
@@ -18,12 +17,8 @@
     unzip
     duf
     sesh
-    # inshellisense
     git
     jq
-    # lua-language-server
-    # stylua
-    # shfmt
   ];
 
   imports = [
@@ -31,15 +26,4 @@
     (inputs.import-tree ./shell)
     (inputs.import-tree ./software)
   ];
-  # environment.sessionVariables = {
-  #   LESSHISTFILE = "${config.xdg.cacheHome}/less/history";
-  #   LESKEY = "${config.xdg.configHome}/less/lesskey";
-  #   XAUTHORITY = "${config.xdg.runtimeDir}/Xauthority";
-  #
-  #   EDITOR = "hx";
-  #   DIRENV_LOG_FORMAT = "";
-  #
-  #   # auto-run programs using nix-index-database
-  #   NIX_AUTO_RUN = "1";
-  # };
 }

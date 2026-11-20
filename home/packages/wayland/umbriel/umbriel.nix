@@ -240,10 +240,10 @@
         {
           match.app_id = "dev.noctalia.UmbrielSharePicker";
           default_floating = true;
-          # default_floating_size_px = {
-          #   width = 1000;
-          #   height = 700;
-          # };
+        }
+        {
+          match.app_id = "org.gnome.Decibels";
+          default_floating = true;
         }
       ];
 

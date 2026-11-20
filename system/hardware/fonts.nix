@@ -17,8 +17,6 @@ in
       # nerdfonts
       nerd-fonts.symbols-only
       nerd-fonts.zed-mono
-      nerd-fonts.victor-mono
-      maple-mono.NF
 
       # normal fonts
       noto-fonts

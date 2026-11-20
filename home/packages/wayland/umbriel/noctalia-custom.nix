@@ -1,5 +1,3 @@
-{ ... }:
-
 {
   programs.umbriel.settings = {
     general.autostart = [ "noctalia" ];

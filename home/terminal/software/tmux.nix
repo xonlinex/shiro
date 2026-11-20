@@ -1,15 +1,6 @@
 { pkgs, ... }:
 
 let
-  # Ember theme
-  # main = "#e08060";
-  # muted = "#8a857b";
-  # TokyoNihgt
-  # main = "#bb9af7";
-  # muted = "#414868";
-  # Evergarden
-  # main = "green";
-  # muted = "8";
   # TokyoNihgt
   main = "#bb9af7";
   muted = "#414868";

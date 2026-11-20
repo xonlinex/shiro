@@ -1,7 +1,5 @@
-{ pkgs, ... }:
-
 {
-  # Enlaza los temas locales a ~/.config/ghostty/themes
+  # Link local themes to ~/.config/ghostty/themes
   xdg.configFile."ghostty/themes".source = ./themes;
 
   programs.ghostty = {

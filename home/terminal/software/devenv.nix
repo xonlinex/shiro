@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   home.packages = [ pkgs.devenv ];
@@ -20,9 +20,9 @@
     tui:
       statusline:
           enabled: false
-    '';
+  '';
 
   programs.fish.interactiveShellInit = ''
     devenv hook fish | source
-    '';
+  '';
 }
