@@ -5,7 +5,7 @@
     dark = {
       mPrimary = "#e08060";
       mOnPrimary = "#1c1b19";
-      mSecondary = "#7890a0";
+      mSecondary = "#c89050";
       mOnSecondary = "#1c1b19";
       mTertiary = "#8a9868";
       mOnTertiary = "#1c1b19";
@@ -15,8 +15,8 @@
       mOnSurface = "#d8d0c0";
       mSurfaceVariant = "#2a2825";
       mOnSurfaceVariant = "#d8d0c0";
-      mOutline = "#73665b";
-      mShadow = "#171311";
+      mOutline = "#3e3c38";
+      mShadow = "#1c1b19";
       mHover = "#3e3c38";
       mOnHover = "#d8d0c0";
       terminal = {

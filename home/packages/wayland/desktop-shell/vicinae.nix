@@ -35,12 +35,12 @@
       };
 
       launcher_window = {
-        rounding = 16;
+        rounding = 10;
         opacity = 0.7;
 
         client_side_decorations = {
           enabled = true;
-          border_width = 1;
+          border_width = 2;
         };
       };
     };

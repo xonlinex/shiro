@@ -1,18 +1,5 @@
-{ inputs, config, ... }:
+{ inputs, vars, ... }:
 
-let
-  # WARNING: verify monitor name
-  monitor = "HDMI-A-2";
-  username = config.home.username;
-  home-user = config.home.homeDirectory;
-  pfp = config.home.homeDirectory + "/Pictures/avatar-rounded.png";
-  rounding = 20;
-  general-opacity = 1.0;
-  capsule_opacity = 0.1;
-  dock-opacity = 1.0;
-  osd-opacity = 1.0;
-  status_shadow = false;
-in
 {
   imports = [
     inputs.noctalia.homeModules.default
@@ -29,32 +16,33 @@ in
         enable_sounds = false; # FIX: audio_visualizer conflict
       };
 
-      # backdrop = {
-      #   enabled = true;
-      # };
-
       bar = {
         order = [ "default" ];
 
         default = {
           font_family = "SF Pro Display";
           font_weight = 400;
-          background_opacity = general-opacity;
+          background_opacity = vars.opacity;
           capsule = true;
           capsule_fill = "primary";
-          capsule_opacity = capsule_opacity;
+          capsule_opacity = vars.capsule-opacity;
           capsule_padding = 10.0;
-          capsule_radius = rounding;
+          capsule_radius = vars.rounding;
           capsule_thickness = 0.7;
           thickness = 50;
-          margin_edge = 0;
-          margin_ends = 0;
-          padding = 10;
+          margin_edge = 10;
+          margin_ends = 200;
+          padding = 10.0;
           position = "top";
-          radius = rounding;
-          shadow = status_shadow;
-          widget_spacing = 5;
-          start = [ "launcher" "workspaces" "taskbar" "active_window" ];
+          radius = vars.rounding;
+          shadow = vars.shadow-status;
+          widget_spacing = 5.0;
+          start = [
+            "launcher"
+            "workspaces"
+            "taskbar"
+            "active_window"
+          ];
           center = [ "clock" ];
           # center = [ "clock" "group:g2" ];
           end = [
@@ -72,19 +60,27 @@ in
               id = "g1";
               enabled = true;
               fill = "primary";
-              members = [ "cpu" "ram" "sysmon" ];
-              opacity = capsule_opacity;
+              members = [
+                "cpu"
+                "ram"
+                "sysmon"
+              ];
+              opacity = vars.capsule-opacity;
               padding = 12.0;
-              radius = rounding;
+              radius = vars.rounding;
             }
             {
               id = "g2";
               enabled = true;
               fill = "primary";
-              members = [ "audio_visualizer" "media" "audio_visualizer" ];
-              opacity = capsule_opacity;
+              members = [
+                "audio_visualizer"
+                "media"
+                "audio_visualizer"
+              ];
+              opacity = vars.capsule-opacity;
               padding = 7.0;
-              radius = rounding;
+              radius = vars.rounding;
             }
           ];
         };
@@ -101,144 +97,15 @@ in
         ];
       };
 
-      desktop_widgets = {
-        enabled = true;
-        schema_version = 2;
-        widget_order = [
-          "desktop-widget-0000000000000001"
-          "desktop-widget-0000000000000002"
-          "desktop-widget-0000000000000003"
-        ];
-
-        widget = {
-          "desktop-widget-0000000000000001" = {
-            box_height = 120.0;
-            box_width = 600.0;
-            cx = 1280.0;
-            cy = 500.0;
-            output = "HDMI-A-2";
-            placement_height = 1440.0;
-            placement_width = 2560.0;
-            type = "clock";
-
-            settings = {
-              background = false;
-              color = "primary";
-              font_family = "Major Mono Display";
-              format = "{:%A}";
-              shadow = true;
-            };
-          };
-
-          "desktop-widget-0000000000000002" = {
-            box_height = 70.0;
-            box_width = 200.0;
-            cx = 1280.0;
-            cy = 580.0;
-            output = "HDMI-A-2";
-            placement_height = 1440.0;
-            placement_width = 2560.0;
-            type = "clock";
-
-            settings = {
-              background = false;
-              color = "primary";
-              font_family = "Major Mono Display";
-              format = "{:%d %b %Y}";
-              shadow = true;
-            };
-          };
-
-          "desktop-widget-0000000000000003" = {
-            box_height = 70.0;
-            box_width = 200.0;
-            cx = 1280.0;
-            cy = 420.0;
-            output = "HDMI-A-2";
-            placement_height = 1440.0;
-            placement_width = 2560.0;
-
-            settings = {
-              background = false;
-              color = "primary";
-              font_family = "Major Mono Display";
-              format = "-{:%H:%M}-";
-              shadow = true;
-            };
-          };
-        };
-      };
-
-      dock = {
-        enabled = false;
-        background_opacity = dock-opacity;
-        shadow = status_shadow;
-        border_width = 1.0;
-        cross_axis_padding = 5;
-        main_axis_padding = 5;
-        icon_size = 55;
-        inactive_opacity = 1.0;
-        inactive_scale = 1.0;
-        item_spacing = 0;
-        # launcher_position = "start";
-        margin_edge = 2;
-        edge_margin = 5;
-        show_dots = true;
-        radius = rounding;
-        pinned = [
-          # "org.gnome.Nautilus"
-          # "org.gnome.Calendar"
-          # "org.gnome.clocks"
-          # "org.gnome.Maps"
-          # "org.gnome.SystemMonitor"
-          # "org.gnome.Decibels"
-          # "org.gnome.Calculator"
-          # "org.gnome.Showtime"
-          # "com.github.neithern.g4music"
-          # "mpv"
-          # "zen-beta"
-          # "code"
-          # "kitty"
-          # "com.mitchellh.ghostty"
-          # "com.obsproject.Studio"
-          # "org.gnome.Loupe"
-          # "brave-browser"
-          # "vesktop"
-          # "Postman"
-          # "DBeaver"
-        ];
-      };
-
-      # hooks = {
-      #   colors_changed = "~/.config/noctalia/toggle-theme.sh";
-      # };
-
-      idle = {
-        behavior_order = [ "lock" "screen-off" "lock-and-suspend" ];
-        pre_action_fade_seconds = 0;
-
-        behavior = {
-          lock = {
-            action = "lock";
-            enabled = true;
-            timeout = 600.0;
-          };
-          screen-off = {
-            # action = "screen_off";
-            enabled = false;
-            # timeout = 660.0;
-          };
-          lock-and-suspend = {
-            action = "lock_and_suspend";
-            enabled = true;
-            timeout = 900.0;
-          };
-        };
-      };
-
       keybinds = {
-        down = [ "Down" "Ctrl+n" ];
-        up = [ "Up" "Ctrl+p" ];
+        down = [
+          "Down"
+          "Ctrl+n"
+        ];
+        up = [
+          "Up"
+          "Ctrl+p"
+        ];
       };
 
       hooks = {
@@ -250,123 +117,12 @@ in
         auto_locate = true;
       };
 
-      lockscreen = {
-        transition = [ "melt" ];
-      };
-
-      lockscreen_widgets = {
-        enabled = true;
-        schema_version = 2;
-        widget_order = [
-          "lockscreen-login-box@${monitor}"
-          "lockscreen-widget-0000000000000008"
-          "lockscreen-widget-000000000000000b"
-          "lockscreen-widget-000000000000000a"
-          "lockscreen-widget-000000000000000c"
-        ];
-
-        widget = {
-          "lockscreen-login-box@${monitor}" = {
-            box_height = 70.0;
-            box_width = 330.0;
-            cx = 1280.0;
-            cy = 1260.0;
-            output = "${monitor}";
-            # placement_height = 1440.0;
-            # placement_width = 2560.0;
-            type = "login_box";
-            settings = {
-              background_color = "surface";
-              background_opacity = osd-opacity;
-              background_radius = rounding;
-              center_password_text = true;
-              input_radius = 10.0;
-              layout = "regular";
-            };
-          };
-
-          lockscreen-widget-0000000000000008 = {
-            box_height = 100.0;
-            box_width = 200.0;
-            cx = 2440.0;
-            cy = 70.0;
-            output = "${monitor}";
-            # placement_height = 1440.0;
-            # placement_width = 2560.0;
-            type = "clock";
-            settings = {
-              background_color = "surface";
-              background_opacity = osd-opacity;
-              background_padding = 20;
-              background_radius = rounding;
-              # clock_style = "digital";
-              color = "on_surface";
-              format = "{:%I:%M %p}";
-            };
-          };
-
-          lockscreen-widget-000000000000000a = {
-            box_height = 0.0;
-            box_width = 0.0;
-            cx = 1280.0;
-            cy = 600.0;
-            output = "${monitor}";
-            # placement_height = 1440.0;
-            # placement_width = 2560.0;
-            type = "sticker";
-            settings = {
-              background_opacity = 0.0;
-              image_path = pfp;
-            };
-          };
-
-          lockscreen-widget-000000000000000b = {
-            box_height = 576.0;
-            box_width = 608.0;
-            cx = 1280.0;
-            cy = 600.0;
-            output = "${monitor}";
-            # placement_height = 1440.0;
-            # placement_width = 2560.0;
-            type = "fancy_audio_visualizer";
-            settings = {
-              background = false;
-              inner_diameter = 0.7;
-              rotation_speed = 0.5;
-              secondary_color = "primary";
-              sensitivity = 0.5;
-              visualization_mode = "wave";
-              wave_thickness = 0.3;
-            };
-          };
-
-          lockscreen-widget-000000000000000c = {
-            box_height = 40.0;
-            box_width = 120.0;
-            cx = 1280.0;
-            cy = 750.0;
-            output = "${monitor}";
-            # placement_height = 1440.0;
-            # placement_width = 2560.0;
-            type = "label";
-            settings = {
-              background_color = "primary";
-              background_opacity = 0.2;
-              background_padding = 10;
-              background_radius = rounding;
-              shadow = status_shadow;
-              title = username;
-            };
-          };
-        };
-      };
-
       nightlight = {
         enabled = true;
       };
 
       notification = {
-        background_opacity = osd-opacity;
+        background_opacity = vars.opacity;
         max_visible = 3;
         width = 320;
         offset_y = 20;
@@ -375,7 +131,7 @@ in
       };
 
       osd = {
-        background_opacity = osd-opacity;
+        background_opacity = vars.opacity;
         offset_x = 20;
         offset_y = 20;
         # orientation = "vertical";
@@ -385,8 +141,8 @@ in
 
       shell = {
         app_icon_color = "secondary";
-        avatar_path = pfp;
-        # corner_radius_scale = 0.0; # squra border
+        avatar_path = vars.pfp;
+        # corner_radius_scale = 0.0; # square border
         font_family = "SF Pro Display";
         show_close_buttons = true;
 
@@ -399,9 +155,9 @@ in
           control_center_placement = "attached";
           control_center_position = "auto";
           open_near_click_control_center = true;
-          shadow = status_shadow;
+          shadow = vars.shadow-status;
           launcher_position = "center";
-          session_placement = "attached"; # floating, attached
+          session_placement = "floating"; # floating, attached
           session_position = "top_center";
           transparency_mode = "glass"; # glass, solid
           wallpaper_placement = "floating";
@@ -409,10 +165,10 @@ in
         };
         screen_corners = {
           enabled = true;
-          size = rounding * 2;
+          size = vars.rounding * 2;
         };
         screenshot = {
-          directory = "${home-user}/Pictures/Screenshots";
+          directory = "${vars.home-path}/Pictures/Screenshots";
         };
         shadow = {
           direction = "center";
@@ -425,14 +181,28 @@ in
         wallpaper_scheme = "m3-content";
         # custom_palette = "ember";
         templates = {
-          builtin_ids = [ "gtk3" "gtk4" "umbriel" ];
-          community_ids = [ "discord" "vicinae" "zen-browser" "sonora"];
+          builtin_ids = [
+            "gtk3"
+            "gtk4"
+            "umbriel"
+            "luciole"
+          ];
+          community_ids = [
+            "discord"
+            "vicinae"
+            "zen-browser"
+            "sonora"
+          ];
         };
       };
 
       wallpaper = {
-        directory = "${home-user}/Pictures/Wallpapers";
-        transition = [ "disc" "honeycomb" "stripes" ];
+        directory = "${vars.home-path}/Pictures/Wallpapers";
+        transition = [
+          "disc"
+          "honeycomb"
+          "stripes"
+        ];
         transition_on_startup = true;
       };
 
@@ -460,34 +230,34 @@ in
         control-center = {
           capsule = true;
           capsule_padding = 2;
-          # capsule_fill = "primary";
-          # capsule_radius = 20;
-          custom_image = pfp;
+          capsule_fill = "primary";
+          capsule_radius = vars.rounding / 2;
+          custom_image = vars.pfp;
           scale = 1.8;
         };
         cpu = {
           display = "text";
           stat = "cpu_usage";
-          visualization = "none";
+          visualization = "none"; # graph, none
           show_value = true;
         };
         launcher = {
           # capsule = true;
           # capsule_padding = 7;
-          # capsule_radius = rounding;
+          # capsule_radius = vars.rounding;
           # scale = 1.0;
           color = "primary";
-          glyph = "flare-filled";
+          glyph = "virus";
         };
         media = {
-          art_size = 35;
+          # art_size = 35;
           # scale = 1.5;
           # capsule = true;
           # capsule_padding = 4;
           hide_when_no_media = true;
           rotate_album_art = true;
-          max_length = 300;
-          # title_scroll = "always";
+          max_length = 200;
+          title_scroll = "always";
           actions = {
             scroll_up = "media previous";
             scroll_down = "media next";
@@ -498,27 +268,28 @@ in
         };
         ram = {
           display = "text";
-          visualization = "none";
+          visualization = "none"; # graph, none
           show_value = true;
         };
         sysmon = {
-          show_value = true;
           stat = "disk_used";
-          visualization = "none";
+          visualization = "none"; # graph, none
+          show_value = true;
         };
         taskbar = {
           inactive_opacity = 0.7;
           only_active_workspace = true;
           show_active_indicator = false;
+          scale = 1.0;
         };
         workspaces = {
           active_pill_size = 2.5;
-          capsule = true;
-          capsule_padding = 11;
-          empty_color = "secondary";
-          pill_scale = 0.6;
-          show_labels = false;
-          style = "regular";
+          # capsule = true;
+          # capsule_padding = 12;
+          # empty_color = "secondary";
+          # pill_scale = 0.6;
+          show_labels = true;
+          style = "regular"; # regular, minimal
         };
       };
     };
