@@ -17,7 +17,7 @@
       # Window
       window-padding-x = "15";
       window-padding-y = "15";
-      background-opacity = "1.0";
+      background-opacity = "0.9";
 
       # UI
       # theme = "dark:Kanso Zen,light:Kanso Pearl";
@@ -28,15 +28,16 @@
       # theme = "dark:Rose Pine,light:Rose Pine Dawn";
       # theme = "dark:evergarden-winter, light:evergarden-summer";
       # theme = "Jellybeans";
-      # theme = "sora";
+      # theme = "dark:sora, light:TokyoNight Day";
+      theme = "dark:tokyonight-night, light:TokyoNight Day";
       # theme = "luna";
       # theme = "cendre";
-      theme = "dark:ember, light:ember-light";
+      # theme = "dark:ember, light:ember-light";
 
       # UI
       window-save-state = "never";
       window-theme = "system";
-      window-decoration = "false";
+      window-decoration = "true";
       scrollbar = "system";
       scrollback-limit = "10000";
       confirm-close-surface = "false";

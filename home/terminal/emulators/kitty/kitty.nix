@@ -5,8 +5,8 @@
     enable = true;
 
     font = {
-      name = "Maple Mono NF";
-      size = 14.0;
+      name = "ZedMono Nerd Font";
+      size = 17.0;
     };
 
     settings = {
@@ -23,23 +23,23 @@
       custom_shaders = "lightning-custom";
     };
     keybindings = {
-# Prefijo: Ctrl+Space (evita chocar con Ctrl+A de readline)
+      # Prefijo: Ctrl+Space (evita chocar con Ctrl+A de readline)
       "ctrl+space>c" = "new_tab_with_cwd";
       "ctrl+space>n" = "next_tab";
       "ctrl+space>p" = "previous_tab";
 
-# Splits: vsplit = a la derecha, hsplit = debajo
+      # Splits: vsplit = a la derecha, hsplit = debajo
       "ctrl+space>v" = "launch --location=vsplit --cwd=current";
       "ctrl+space>s" = "launch --location=hsplit --cwd=current";
 
-# Moverse entre paneles
+      # Moverse entre paneles
       "ctrl+space>h" = "neighboring_window left";
       "ctrl+space>j" = "neighboring_window bottom";
       "ctrl+space>k" = "neighboring_window top";
       "ctrl+space>l" = "neighboring_window right";
 
-      "ctrl+space>z" = "toggle_layout stack";        # zoom
-        "ctrl+space>r" = "start_resizing_window";
+      "ctrl+space>z" = "toggle_layout stack"; # zoom
+      "ctrl+space>r" = "start_resizing_window";
       "ctrl+space>x" = "close_window";
       "ctrl+space>e" = "show_scrollback";
 

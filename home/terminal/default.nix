@@ -3,7 +3,8 @@
   config,
   inputs,
   ...
-}: {
+}:
+{
 
   home.packages = with pkgs; [
     tree-sitter
@@ -14,7 +15,6 @@
     gcc
     duff
     imagemagick
-    openssh
     unzip
     duf
     sesh
