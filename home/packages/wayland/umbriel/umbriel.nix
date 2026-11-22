@@ -21,7 +21,9 @@
       };
 
       colors = {
+        backdrop = "#000000";
         border = {
+
           # focused = "#F7DCDE39";
           # unfocused = "#A58A8D30";
         };
@@ -226,6 +228,14 @@
         action = "overview-open";
       };
 
+      animation = {
+        layers = {
+          enabled = true;
+          duration_ms = 200;
+          curve = "easeout";
+        };
+      };
+
       window_rule = [
         {
           blur = true;
@@ -249,7 +259,8 @@
 
       layer_rule = [
         {
-          match.namespace = "^vicinae";
+          match.namespace = "^vicinae$";
+          dim_behind = 0.2;
           blur = true;
           # blur_popups = true;
           blur_ignore_alpha = 0.1;
