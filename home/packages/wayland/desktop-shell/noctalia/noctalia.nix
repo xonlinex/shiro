@@ -157,9 +157,9 @@
           open_near_click_control_center = true;
           shadow = vars.shadow-status;
           launcher_position = "center";
-          session_placement = "floating"; # floating, attached
+          session_placement = "attached"; # floating, attached
           session_position = "top_center";
-          transparency_mode = "glass"; # glass, solid
+          transparency_mode = "soft"; # glass, solid, soft
           wallpaper_placement = "floating";
           wallpaper_position = "bottom_center";
         };
