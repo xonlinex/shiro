@@ -11,7 +11,7 @@
   imports = [
     (inputs.import-tree ./packages)
     ./terminal
-    ./editors/editorconfig.nix
+    ./editors/formating-global.nix
   ];
 
   home.sessionVariables = {
@@ -20,6 +20,7 @@
 
     # DISPLAY = ":1";
     # _JAVA_AWT_WM_NONREPARENTING = "1";
+    # XDG_CURRENT_DESKTOP = "umbriel";
     QT_QPA_PLATFORM = "wayland";
     QT_QPA_PLATFORMTHEME = "gtk";
     QT_QPA_PLATFORMTHEME_QT6 = "gtk";
