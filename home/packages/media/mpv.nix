@@ -2,6 +2,11 @@
   programs.mpv = {
     enable = true;
 
+    config = {
+      keep-open = "no";
+      idle = "no";
+    };
+
     bindings = {
       # MOUSE WHEEL CONTROLS
       "WHEEL_UP" = "seek 10";
