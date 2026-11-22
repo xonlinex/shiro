@@ -65,6 +65,10 @@
         match.namespace = "^noctalia-(notification|dock|panel|attached-panel|osd)$";
         blur_optimized = false;
       }
+      {
+        match.namespace = "^noctalia-panel$";
+        dim_behind = 0.2;
+      }
     ];
 
     # Rules
