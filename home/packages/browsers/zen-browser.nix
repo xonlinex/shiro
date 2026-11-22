@@ -39,6 +39,7 @@ in
         "zen.theme.content-element-separation" = 8;
         "signon.rememberSignons" = false;
         "browser.ctrlTab.sortByRecentlyUsed" = true;
+        # "layout.css.devPixelsPerPx" = "1.0"; # zoom 120
 
         # Hardware video acceleration
         "gfx.webrender.all" = true;
