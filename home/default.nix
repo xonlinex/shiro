@@ -21,9 +21,9 @@
     # DISPLAY = ":1";
     # _JAVA_AWT_WM_NONREPARENTING = "1";
     # XDG_CURRENT_DESKTOP = "umbriel";
-    QT_QPA_PLATFORM = "wayland";
-    QT_QPA_PLATFORMTHEME = "gtk";
-    QT_QPA_PLATFORMTHEME_QT6 = "gtk";
+    # QT_QPA_PLATFORM = "wayland";
+    # QT_QPA_PLATFORMTHEME = "gtk";
+    # QT_QPA_PLATFORMTHEME_QT6 = "gtk";
     ELECTRON_OZONE_PLATFORM_HINT = "auto";
   };
 
