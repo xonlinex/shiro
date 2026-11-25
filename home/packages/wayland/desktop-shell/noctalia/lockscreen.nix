@@ -135,7 +135,7 @@
               background_color = "surface";
               background_opacity = 0.7;
               background_padding = 10;
-              background_radius = vars.rounding;
+              background_radius = 20;
               color = "on_surface";
               shadow = vars.shadow-status;
               title = vars.username;
