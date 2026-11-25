@@ -48,6 +48,13 @@
           offset_x = 0;
           offset_y = 0;
         };
+        title_bar = {
+          mode = "off"; # on, off, forced
+          height = 35;
+          font = "SF Pro Display 11";
+          title_align = "center";
+          button_size = 14;
+        };
       };
 
       overview = {
