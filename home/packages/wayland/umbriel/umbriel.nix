@@ -164,6 +164,10 @@
         "Mod+Shift+J" = "window-move-down";
         "Mod+Shift+K" = "window-move-up";
         "Mod+Shift+L" = "column-move-right";
+        "Mod+Shift+U" = "window-move-to-workspace-next";
+        "Mod+Shift+I" = "window-move-to-workspace-previous";
+        "Mod+BracketLeft" = "window-consume-or-expel-left";
+        "Mod+BracketRight" = "window-consume-or-expel-right";
 
         # Resize window
         "Mod+Minus" = "window-modify-primary-extent -0.05";

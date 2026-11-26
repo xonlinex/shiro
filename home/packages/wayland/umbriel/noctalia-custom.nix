@@ -6,7 +6,7 @@
       "Mod+D" = "spawn noctalia msg dock-toggle";
       "Mod+B" = "spawn noctalia msg bar-toggle";
       "Mod+Shift+Q" = "spawn noctalia msg panel-toggle session";
-      "Mod+Shift+I" = "spawn noctalia msg settings-toggle";
+      "Mod+comma" = "spawn noctalia msg settings-toggle";
       "Mod+Shift+W" = "spawn noctalia msg panel-toggle wallpaper";
       "Mod+Alt+L" = "spawn noctalia msg session lock";
       "Ctrl+Shift+Escape" = "spawn noctalia msg panel-open control-center system";
